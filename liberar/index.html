@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Novena | Nossa Senhora Desatadora de Nós</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+
+      min-height: 100vh;
+
+      font-family: Georgia, 'Times New Roman', serif;
+
+      color: white;
+
+      background: #07103a;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 40px 16px;
+
+      position: relative;
+    }
+
+    body::before {
+
+      content: "";
+
+      position: fixed;
+      inset: 0;
+
+      z-index: -2;
+
+      background:
+        linear-gradient(rgba(8, 12, 35, 0.62), rgba(5, 8, 28, 0.96)),
+        url("./images/nossa-senhora-desatadora.jpg");
+
+      background-repeat: no-repeat;
+
+      background-size: cover;
+
+      background-position: center 38%;
+
+    }
+
+    .stars {
+
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+
+      z-index: -1;
+
+      opacity: 0.38;
+
+      background-image:
+        radial-gradient(#ffffff 1px, transparent 1px),
+        radial-gradient(#ffffff 1px, transparent 1px);
+
+      background-size: 120px 120px, 180px 180px;
+
+      background-position: 20px 40px, 80px 100px;
+
+    }
+
+    .wrapper {
+
+      width: 100%;
+      max-width: 430px;
+
+      position: relative;
+      z-index: 2;
+
+    }
+
+    .top-image {
+
+      width: 120px;
+      height: 120px;
+
+      margin: 0 auto -35px;
+
+      border-radius: 50%;
+
+      padding: 7px;
+
+      background:
+        linear-gradient(135deg, #d7ad32, #6b4912);
+
+      box-shadow:
+        0 0 25px rgba(231, 187, 64, 0.45);
+
+      position: relative;
+      z-index: 3;
+
+    }
+
+    .top-image img {
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+    }
+
+    .card {
+
+      width: 100%;
+
+      background: #08154a;
+
+      border-radius: 30px;
+
+      padding: 85px 35px 32px;
+
+      border: 1px solid rgba(255, 255, 255, 0.06);
+
+      box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45);
+
+    }
+
+    .mini-title {
+
+      text-align: center;
+
+      color: #d6ac35;
+
+      text-transform: uppercase;
+
+      letter-spacing: 6px;
+
+      font-size: 12px;
+
+      margin-bottom: 18px;
+
+    }
+
+    h1 {
+
+      text-align: center;
+
+      font-size: 34px;
+
+      line-height: 1.18;
+
+      text-transform: uppercase;
+
+      margin-bottom: 14px;
+
+      text-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.35);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+
+    .title-line {
+
+      display: block;
+
+    }
+
+    .title-line-nowrap {
+
+      display: block;
+
+      white-space: nowrap;
+
+    }
+
+    .subtitle {
+
+      text-align: center;
+
+      color: #b9bfd5;
+
+      font-style: italic;
+
+      font-size: 17px;
+
+      margin-bottom: 34px;
+
+    }
+
+    .divider {
+
+      text-align: center;
+
+      color: #c8a133;
+
+      letter-spacing: 12px;
+
+      margin-bottom: 35px;
+
+    }
+
+    label {
+
+      display: block;
+
+      color: #f0c53c;
+
+      font-weight: bold;
+
+      margin-bottom: 12px;
+
+      font-size: 15px;
+
+    }
+
+    input {
+
+      width: 100%;
+
+      height: 60px;
+
+      border-radius: 18px;
+
+      border: 2px solid #c59a24;
+
+      background: #2f3a6d;
+
+      color: white;
+
+      padding: 0 20px;
+
+      font-size: 17px;
+
+      outline: none;
+
+      box-shadow:
+        0 0 0 4px rgba(197, 154, 36, 0.10);
+
+    }
+
+    input::placeholder {
+
+      color: #9ca5c6;
+
+    }
+
+    .error {
+
+      color: #ff9f9f;
+
+      font-size: 13px;
+
+      margin-top: 8px;
+
+      display: none;
+
+    }
+
+    button {
+
+      width: 100%;
+
+      height: 62px;
+
+      border: none;
+
+      border-radius: 40px;
+
+      margin-top: 24px;
+
+      background:
+        linear-gradient(90deg, #d7aa1d, #ffe36c);
+
+      color: #071333;
+
+      font-size: 17px;
+
+      font-weight: bold;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      font-family: Georgia, 'Times New Roman', serif;
+
+      transition: 0.3s;
+
+      box-shadow:
+        0 18px 35px rgba(214, 167, 29, 0.35);
+
+    }
+
+    button:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 22px 45px rgba(214, 167, 29, 0.50);
+
+    }
+
+    .quote {
+
+      margin-top: 34px;
+
+      padding-top: 28px;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+
+      text-align: center;
+
+      color: #d7ab33;
+
+      font-style: italic;
+
+      line-height: 1.8;
+
+      font-size: 15px;
+
+    }
+
+    .footer {
+
+      margin-top: 22px;
+
+      text-align: center;
+
+      color: #70789a;
+
+      font-size: 12px;
+
+    }
+
+    @media(max-width:480px) {
+
+      body {
+
+        padding: 30px 18px;
+
+        align-items: flex-start;
+
+      }
+
+      body::before {
+
+        background-size: cover;
+
+        background-position: center top;
+
+      }
+
+      .wrapper {
+
+        max-width: 420px;
+
+      }
+
+      .top-image {
+
+        width: 100px;
+        height: 100px;
+
+        margin-bottom: -35px;
+
+      }
+
+      .card {
+
+        padding: 72px 28px 28px;
+
+        border-radius: 24px;
+
+      }
+
+      h1 {
+
+        font-size: 25px;
+
+        line-height: 1.22;
+
+      }
+
+      .mini-title {
+
+        letter-spacing: 4px;
+
+        font-size: 11px;
+
+      }
+
+      .subtitle {
+
+        font-size: 15px;
+
+      }
+
+      input,
+      button {
+
+        height: 56px;
+
+        font-size: 15px;
+
+      }
+
+      button {
+
+        font-size: 14px;
+
+      }
+
+    }
+
+    @media(max-width:360px) {
+
+      h1 {
+
+        font-size: 22px;
+
+      }
+
+      .card {
+
+        padding-left: 22px;
+        padding-right: 22px;
+
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="stars"></div>
+
+  <div class="wrapper">
+
+    <div class="top-image">
+
+      <img src="./images/nossa-senhora-desatadora.jpg" alt="Nossa Senhora">
+
+    </div>
+
+    <div class="card">
+
+      <div class="mini-title">
+        ✦ Devoção Mariana ✦
+      </div>
+
+      <h1>
+
+        <span class="title-line">
+          Nossa Senhora
+        </span>
+
+        <span class="title-line-nowrap">
+          Desatadora de Nós
+        </span>
+
+      </h1>
+
+      <div class="subtitle">
+        Novena Sagrada de 9 Dias
+      </div>
+
+      <div class="divider">
+        — ✦ —
+      </div>
+
+      <form id="formLogin">
+
+        <label for="email">
+          Seu e-mail
+        </label>
+
+        <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+
+        <div class="error" id="errorMsg">
+          Digite um e-mail válido.
+        </div>
+
+        <button type="submit">
+          🕊 Acessar Minha Novena
+        </button>
+
+      </form>
+
+      <div class="quote">
+        "Ela desfaz os nós que aprisionam<br>
+        nossa alma e nosso coração."
+      </div>
+
+      <div class="footer">
+        © 2026 - Novena de Nossa Senhora Desatadora de Nós
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    const form =
+      document.getElementById("formLogin");
+
+    const emailInput =
+      document.getElementById("email");
+
+    const errorMsg =
+      document.getElementById("errorMsg");
+
+    form.addEventListener("submit", function (e) {
+
+      e.preventDefault();
+
+      const email =
+        emailInput.value.trim().toLowerCase();
+
+      const validEmail =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!validEmail) {
+
+        errorMsg.style.display = "block";
+
+        return;
+
+      }
+
+      errorMsg.style.display = "none";
+
+      localStorage.setItem(
+        "email_novena",
+        email
+      );
+
+      window.location.href =
+        "https://maxview.online/inicio-oracoes-principaI/";
+
+    });
+
+  </script>
+
+</body>
+
+</html>

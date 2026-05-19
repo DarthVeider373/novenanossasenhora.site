@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dia 3 - Oração para a Prosperidade</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #071542;
+      --dark: #050f31;
+      --gold: #dfb72f;
+      --white: #f5f6ff;
+      --border: rgba(223, 183, 47, 0.58);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.8;
+    }
+
+    .top-bar {
+      width: 100%;
+      height: 68px;
+      background: rgba(5, 15, 49, 0.96);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .top-inner {
+      width: min(1080px, 92%);
+      margin: 0 auto;
+    }
+
+    .back-top {
+      color: var(--gold);
+      font-size: 22px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1080px, 92%);
+      margin: 0 auto;
+      padding: 38px 0 80px;
+    }
+
+    .hero {
+      text-align: center;
+    }
+
+    .day-pill {
+      display: inline-block;
+      background: var(--gold);
+      color: #06123b;
+      font-weight: 800;
+      font-size: 22px;
+      padding: 6px 24px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: "Cinzel", serif;
+      color: var(--gold);
+      font-size: clamp(36px, 4.4vw, 58px);
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin-bottom: 34px;
+    }
+
+    .icon-circle {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 58px;
+      border: 5px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 62px;
+      box-shadow: 0 0 45px rgba(223, 183, 47, 0.65);
+    }
+
+    .card {
+      background: rgba(5, 15, 49, 0.72);
+      border: 1px solid rgba(223, 183, 47, 0.42);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 34px;
+    }
+
+    .quote-card {
+      position: relative;
+      text-align: center;
+      padding: 38px 54px;
+    }
+
+    .quote-mark {
+      position: absolute;
+      top: 8px;
+      left: 18px;
+      font-size: 74px;
+      color: rgba(223, 183, 47, 0.35);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .quote-text {
+      font-size: clamp(22px, 2vw, 28px);
+      font-style: italic;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .quote-author {
+      color: var(--gold);
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    h2 {
+      color: var(--gold);
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .reflection p {
+      font-size: 21px;
+      font-weight: 500;
+      margin-bottom: 22px;
+    }
+
+    .prayer-card {
+      border: 3px solid rgba(223, 183, 47, 0.62);
+      border-radius: 18px;
+      padding: 36px 42px 48px;
+    }
+
+    .prayer-card h2,
+    .audio-card h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .prayer-text {
+      font-style: italic;
+      font-size: clamp(22px, 2.1vw, 27px);
+      font-weight: 600;
+      line-height: 1.95;
+    }
+
+    .prayer-text p {
+      margin-bottom: 32px;
+    }
+
+    .audio-card {
+      border: 3px solid rgba(223, 183, 47, 0.62);
+      text-align: center;
+      padding: 32px 34px 44px;
+    }
+
+    .audio-card p {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 34px;
+    }
+
+    .audio-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #06123b;
+      background: linear-gradient(90deg, #c99405, #ffe568);
+      padding: 12px 38px;
+      border-radius: 999px;
+      font-size: 18px;
+      font-weight: 800;
+      border: 2px solid rgba(255, 255, 255, 0.55);
+      box-shadow: 0 10px 22px rgba(223, 183, 47, 0.25);
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .nav-btn {
+      color: var(--gold);
+      border: 2px solid rgba(223, 183, 47, 0.65);
+      border-radius: 14px;
+      padding: 16px 25px;
+      font-size: 21px;
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(5, 15, 49, 0.35);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 24px 15px;
+      font-size: 18px;
+      font-weight: 600;
+      background: rgba(5, 15, 49, 0.4);
+    }
+
+    footer a {
+      color: var(--white);
+    }
+
+    @media (max-width: 768px) {
+      .top-bar {
+        height: 58px;
+      }
+
+      .back-top {
+        font-size: 18px;
+      }
+
+      .page {
+        width: 92%;
+        padding-top: 28px;
+      }
+
+      .day-pill {
+        font-size: 18px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .icon-circle {
+        width: 112px;
+        height: 112px;
+        font-size: 48px;
+        margin-bottom: 36px;
+      }
+
+      .card,
+      .quote-card,
+      .prayer-card,
+      .audio-card {
+        padding: 24px 20px;
+      }
+
+      .quote-mark {
+        font-size: 55px;
+        left: 12px;
+      }
+
+      .reflection p,
+      .prayer-text {
+        font-size: 18px;
+      }
+
+      .audio-btn {
+        width: 100%;
+        font-size: 16px;
+        padding: 14px 12px;
+      }
+
+      .nav-buttons {
+        flex-direction: column;
+      }
+
+      .nav-btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="top-bar">
+    <div class="top-inner">
+      <a class="back-top" href="https://novenanossasenhora.site/jornada-de-7-dias/">← Voltar</a>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <section class="hero">
+      <div class="day-pill">DIA 3</div>
+      <h1>Oração para a Prosperidade</h1>
+
+      <div class="icon-circle">
+        <span>💰</span>
+      </div>
+    </section>
+
+    <section class="card quote-card">
+      <div class="quote-mark">“</div>
+      <p class="quote-text">
+        "Não se preocupe com as coisas que causam preocupação... Só uma coisa é necessária: elevar seu espírito e amar a Deus."
+      </p>
+      <div class="quote-author">— Nossa Senhora Desatadora de Nos</div>
+    </section>
+
+    <section class="card reflection">
+      <h2>Reflexão</h2>
+
+      <p>
+        Neste terceiro dia, dirigimos nossas orações à prosperidade e à bênção nas necessidades materiais. A palavra "prosperidade" não se refere apenas a riquezas ou ganhos financeiros, mas à providência divina que supre o que precisamos para viver com dignidade, paz e o suficiente para ajudar quem necessita.
+      </p>
+
+      <p>
+        Jesus nos ensinou a confiar na Providência: assim como Deus veste os lírios do campo e alimenta as aves do céu, Ele não deixará faltar aos seus filhos o pão de cada dia. No entanto, também nos advertiu para não nos escravizarmos pelo dinheiro nem nos preocuparmos excessivamente com os bens materiais, pois nossa verdadeira riqueza está em Deus.
+      </p>
+
+      <p>
+        Nossa Senhora Desatadora de Nos, apesar de ter escolhido a vida religiosa e a pobreza voluntária, sabia a importância de confiar em Deus para todas as coisas. Peçamos ao Senhor que derrame suas bênçãos em nossa vida profissional, financeira e familiar.
+      </p>
+    </section>
+
+    <section class="card prayer-card">
+      <h2>Oração Completa</h2>
+
+      <div class="prayer-text">
+        <p>
+          "Deus Pai Providente, Criador do céu e da terra, em tuas mãos está todo o ouro e toda a prata, e nada nos falta quando confiamos em Ti. Neste dia, venho colocar diante da tua Providência minha vida material: minhas necessidades, preocupações financeiras, meu trabalho e os projetos pelos quais luto diariamente. Reconheço, Senhor, que sem Ti nada podemos — és Tu quem dá fertilidade à terra e faz prosperar o trabalho de nossas mãos.
+        </p>
+
+        <p>
+          Por isso, humildemente peço teu auxílio: abençoa meus empreendimentos, ilumina minhas decisões financeiras, abre as portas de um bom emprego ou negócio honesto para que, através do meu esforço, eu possa prover o sustento da minha família e viver com tranquilidade. Senhor, afasta de mim a miséria e a necessidade extrema, livra-me de dívidas insustentáveis e de toda injustiça ou desonestidade no campo financeiro. Dá-me força e saúde para trabalhar e prosperar por meios justos.
+        </p>
+
+        <p>
+          Concede-me também sabedoria para administrar bem os bens que me confias, usando-os de modo responsável e fraterno, sem desperdiçar, sem acumular por avareza, e sem colocar o dinheiro acima dos valores do teu Reino. Que eu nunca esqueça de praticar a caridade quando estiver em bonança, compartilhando com quem tem menos, pois reconheço que tudo o que tenho vem de Ti.
+        </p>
+
+        <p>
+          Pai Amado, entrego hoje todas as minhas preocupações financeiras: as contas a pagar, as dúvidas sobre o futuro, os temores de perda. Em vez de ansiedade, quero confiar na tua Palavra, que me assegura que vale mais buscar teu Reino. A exemplo de Nossa Senhora Desatadora de Nos, que mesmo nos momentos de provação material nunca deixou de confiar, eu também digo: confio na tua providência, Senhor! Sei que estás cuidando de mim e dos meus entes queridos, mesmo quando as coisas parecem difíceis.
+        </p>
+
+        <p>
+          Peço também, Senhor, a graça da verdadeira prosperidade, que inclui a paz de espírito e a união da família. Que, com a melhora da minha vida material, eu também possa crescer em gratidão e humildade. Livra-me da avareza e do amor desordenado ao dinheiro, para que a prosperidade não se torne laço de perdição, mas instrumento de bênçãos.
+        </p>
+
+        <p>
+          Senhor, que nunca me falte o pão na mesa, o teto sobre minha cabeça e o necessário para cumprir minha missão nesta vida. E se for tua vontade conceder-me mais do que o básico, que eu saiba usar esse extra para fazer o bem e semear amor ao meu redor. Agradeço desde já por cuidar de mim como a um filho muito amado. Divino Pai Providente, abençoa meus passos rumo a uma vida próspera em todos os sentidos — material, emocional e espiritual. Que eu prospere antes de tudo em virtudes e na fé, pois essa é a maior riqueza que ninguém pode roubar. Com Nossa Senhora Desatadora de Nos proclamo: estou em tuas mãos e nada me faltará. Amém."
+        </p>
+      </div>
+    </section>
+
+    <section class="card audio-card">
+      <h2>Aprofunde sua experiência</h2>
+
+      <p>
+        Ouça esta oração narrada com música inspiradora e receba as bênçãos da providência divina em sua vida material e financeira.
+      </p>
+
+      <a class="audio-btn" href="#">
+        🎧 Quero Ouvir Esta Oração no Audiolivro
+      </a>
+    </section>
+
+    <div class="nav-buttons">
+      <a class="nav-btn" href="https://novenanossasenhora.site/jornada-de-7-dias/dia2/">
+        ← Voltar: Cura
+      </a>
+
+      <a class="nav-btn" href="https://novenanossasenhora.site/jornada-de-7-dias/dia4/">
+        Próximo: Proteção da Família →
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <div>2026 Novena de Nossa Senhora Desatadora de Nos</div>
+    <div>Contato: <a href="mailto:suporte@novenanossasenhora.site">suporte@novenanossasenhora.site</a></div>
+  </footer>
+
+</body>
+
+</html>

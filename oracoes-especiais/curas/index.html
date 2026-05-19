@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>10 Orações para Curas Físicas e Espirituais</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #112b5c;
+      --card: #04163d;
+      --gold: #e0b83f;
+      --gold-2: #f2d56b;
+      --white: #ffffff;
+      --border: rgba(224, 184, 63, 0.9);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 24px 60px;
+    }
+
+    .back-link {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .hero {
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.2;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      margin: 42px auto;
+      max-width: 1100px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(224, 184, 63, 0.35);
+    }
+
+    .divider i {
+      color: var(--gold);
+      font-size: 24px;
+    }
+
+    .oracao-menu {
+      max-width: 1020px;
+      margin: 0 auto 38px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .oracao-btn {
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: 2px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.25s;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .oracao-btn:hover,
+    .oracao-btn.active {
+      background: linear-gradient(180deg, var(--gold-2), var(--gold));
+      color: #0c224c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(224, 184, 63, 0.22);
+    }
+
+    .card-ora {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      border-radius: 28px;
+      border: 2px solid var(--border);
+      background: #031337;
+      overflow: hidden;
+      box-shadow: 0 12px 38px rgba(0, 0, 0, 0.28);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 34px 0;
+    }
+
+    .card-header h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .copy-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(224, 184, 63, 0.35);
+      background: rgba(224, 184, 63, 0.08);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.25s;
+      font-size: 18px;
+    }
+
+    .copy-btn:hover {
+      background: rgba(224, 184, 63, 0.16);
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      padding: 10px 34px 36px;
+      font-size: 1.18rem;
+      line-height: 2;
+    }
+
+    .card-body p {
+      margin-bottom: 24px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      margin-top: 34px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      padding: 15px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 20px;
+      transition: 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .nav-btn.prev {
+      background: #737373;
+      color: white;
+    }
+
+    .nav-btn.next {
+      background: linear-gradient(180deg, var(--gold-2), var(--gold));
+      color: #0d2249;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .bottom-home {
+      text-align: center;
+      margin-top: 22px;
+    }
+
+    .home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-size: 20px;
+      transition: 0.25s;
+    }
+
+    .home-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 24px 14px 50px;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .card-header {
+        padding: 22px 18px 0;
+      }
+
+      .card-body {
+        padding: 10px 18px 28px;
+        font-size: 1rem;
+        line-height: 1.9;
+      }
+
+      .card-header h2 {
+        font-size: 1.45rem;
+      }
+
+      .oracao-btn {
+        width: 100%;
+      }
+
+      .nav-btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 18px;
+      }
+
+      .home-btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <a href="https://maxview.online/inicio-oracoes-principal/" class="back-link">
+      <i class="fa-solid fa-arrow-left"></i>
+      Voltar para o Início
+    </a>
+
+    <section class="hero">
+
+      <h1>10 Orações para Curas Físicas e Espirituais</h1>
+
+      <p>
+        Escolha a oração para sua necessidade, leia com fé e compartilhe
+        com quem precisa de cura e esperança.
+      </p>
+
+    </section>
+
+    <div class="divider">
+      <i class="fa-solid fa-heart-pulse"></i>
+    </div>
+
+    <div class="oracao-menu">
+
+      <a class="oracao-btn active">Oração para Alzheimer</a>
+
+      <a class="oracao-btn">Oração para Diabetes</a>
+
+      <a class="oracao-btn">Oração para Câncer</a>
+
+      <a class="oracao-btn">Oração para Catarata</a>
+
+      <a class="oracao-btn">Oração para Artrite</a>
+
+      <a class="oracao-btn">Oração para Depressão</a>
+
+      <a class="oracao-btn">Oração para Ansiedade</a>
+
+      <a class="oracao-btn">Oração para Insônia</a>
+
+      <a class="oracao-btn">Oração para Hipertensão</a>
+
+      <a class="oracao-btn">Oração para Dores Crônicas</a>
+
+    </div>
+
+    <div class="card-ora">
+
+      <div class="card-header">
+
+        <h2 id="titulo-oracao">Oração para Alzheimer</h2>
+
+        <button class="copy-btn" id="copyBtn">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+
+      </div>
+
+      <div class="card-body" id="texto-oracao">
+
+        <p>
+          Senhor da Sabedoria Eterna, hoje me volto a Ti em favor de você
+          que enfrenta o desafio do Alzheimer.
+        </p>
+
+        <p>
+          Ilumina cada célula da sua mente, reacendendo lembranças queridas —
+          rostos de amigos, rostos de filhos, histórias que teceram sua vida.
+        </p>
+
+        <p>
+          Concede-me paciência e ternura para cuidar de você nos momentos de
+          confusão e incerteza.
+        </p>
+
+        <p>
+          Que o calor do Teu amor penetre em cada sinapse, restaurando
+          gradualmente a clareza dos seus pensamentos.
+        </p>
+
+        <p>
+          Protege seu coração das frustrações e concede conforto à sua alma
+          sempre que se sentir perdido.
+        </p>
+
+        <p>
+          Faz com que, mesmo nas teias do esquecimento, emane em torno de você
+          o vínculo indestrutível do nosso amor e da Tua presença.
+        </p>
+
+        <p>Amém.</p>
+
+      </div>
+
+    </div>
+
+    <div class="nav-buttons">
+
+      <a class="nav-btn prev" id="prevBtn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Anterior
+      </a>
+
+      <a class="nav-btn next" id="nextBtn">
+        Próxima
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+    <div class="bottom-home">
+
+      <a href="https://maxview.online/inicio-oracoes-principal/" class="home-btn">
+        <i class="fa-solid fa-house"></i>
+        Voltar ao Início
+      </a>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    const botoes = document.querySelectorAll(".oracao-btn");
+    const titulo = document.getElementById("titulo-oracao");
+    const texto = document.getElementById("texto-oracao");
+
+    let atual = 0;
+
+    const oracoes = [
+
+      {
+        titulo: "Oração para Alzheimer",
+        texto: `
+        <p>Senhor da Sabedoria Eterna, hoje me volto a Ti em favor de você que enfrenta o desafio do Alzheimer.</p>
+
+        <p>Ilumina cada célula da sua mente, reacendendo lembranças queridas.</p>
+
+        <p>Concede paz, paciência e conforto em todos os momentos.</p>
+
+        <p>Amém.</p>
+        `
+      },
+
+      {
+        titulo: "Oração para Diabetes",
+        texto: `
+        <p>Senhor, derrama tua cura sobre quem enfrenta a diabetes.</p>
+
+        <p>Fortalece o corpo, equilibra a saúde e renova a esperança.</p>
+
+        <p>Amém.</p>
+        `
+      },
+
+      {
+        titulo: "Oração para Câncer",
+        texto: `
+        <p>Senhor Deus, envolve com tua luz quem enfrenta o câncer.</p>
+
+        <p>Dá força, coragem e restauração física e espiritual.</p>
+
+        <p>Amém.</p>
+        `
+      },
+
+      {
+        titulo: "Oração para Catarata",
+        texto: `
+        <p>Senhor, ilumina os olhos e a vida de quem sofre com a catarata.</p>
+
+        <p>Que a visão seja restaurada com fé e esperança.</p>
+
+        <p>Amém.</p>
+        `
+      },
+
+      {
+        titulo: "Oração para Artrite",
+        texto: `
+        <p>Senhor, alivia as dores e fortalece as articulações.</p>
+
+        <p>Concede conforto e saúde para continuar caminhando.</p>
+
+        <p>Amém.</p>
+        `
+      },
+
+      {
+        titulo: "Oração para Depressão",
+        texto: `
+        <p>Senhor, visita o coração abatido e renova a alegria.</p>
+
+        <p>Fortalece a mente e traz paz à alma.</p>
+
+        <p>Amém.</p>
+        `
+      },
+
+      {
+        titulo: "Oração para Ansiedade",
+        texto: `
+        <p>Senhor, acalma os pensamentos e serena o coração.</p>
+
+        <p>Derrama tua paz sobre quem enfrenta ansiedade.</p>
+
+        <p>Amém.</p>
+        `
+      },
+
+      {
+        titulo: "Oração para Insônia",
+        texto: `
+        <p>Senhor, concede descanso e tranquilidade nesta noite.</p>
+
+        <p>Que o sono seja restaurador e cheio de paz.</p>
+
+        <p>Amém.</p>
+        `
+      },
+
+      {
+        titulo: "Oração para Hipertensão",
+        texto: `
+        <p>Senhor, equilibra a pressão e protege o coração.</p>
+
+        <p>Concede saúde e serenidade ao corpo.</p>
+
+        <p>Amém.</p>
+        `
+      },
+
+      {
+        titulo: "Oração para Dores Crônicas",
+        texto: `
+        <p>Senhor, alivia as dores persistentes e fortalece o corpo.</p>
+
+        <p>Renova a esperança e a fé diariamente.</p>
+
+        <p>Amém.</p>
+        `
+      }
+
+    ];
+
+    function atualizarOracao(index) {
+
+      atual = index;
+
+      titulo.innerHTML = oracoes[index].titulo;
+      texto.innerHTML = oracoes[index].texto;
+
+      botoes.forEach(btn => btn.classList.remove("active"));
+
+      botoes[index].classList.add("active");
+
+      window.scrollTo({
+        top: document.querySelector(".card-ora").offsetTop - 20,
+        behavior: "smooth"
+      });
+
+    }
+
+    botoes.forEach((botao, index) => {
+
+      botao.addEventListener("click", () => {
+        atualizarOracao(index);
+      });
+
+    });
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+
+      atual++;
+
+      if (atual >= oracoes.length) {
+        atual = 0;
+      }
+
+      atualizarOracao(atual);
+
+    });
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+
+      atual--;
+
+      if (atual < 0) {
+        atual = oracoes.length - 1;
+      }
+
+      atualizarOracao(atual);
+
+    });
+
+    document.getElementById("copyBtn").addEventListener("click", () => {
+
+      navigator.clipboard.writeText(texto.innerText);
+
+      const botao = document.getElementById("copyBtn");
+
+      botao.innerHTML = '<i class="fa-solid fa-check"></i>';
+
+      setTimeout(() => {
+        botao.innerHTML = '<i class="fa-regular fa-copy"></i>';
+      }, 1500);
+
+    });
+
+  </script>
+
+</body>
+
+</html>

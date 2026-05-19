@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solicitar Reembolso</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --red: #ef3333;
+      --red-dark: #c51f2b;
+      --blue: #1976d2;
+      --green: #1d8b42;
+      --cream: #fffbea;
+      --soft-red: #fff4f4;
+      --text: #071426;
+      --muted: #5b6675;
+      --border: #ffd7d7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #faf8f6;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      padding: 40px 15px;
+    }
+
+    .wrapper {
+      width: min(680px, 100%);
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 45px rgba(239, 51, 51, 0.14);
+      border: 1px solid #ffe3e3;
+    }
+
+    .header {
+      background: var(--soft-red);
+      text-align: center;
+      padding: 54px 28px 42px;
+    }
+
+    .icon-return {
+      font-size: 58px;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    h1 {
+      font-family: "Cinzel", serif;
+      font-size: clamp(32px, 5vw, 45px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 19px;
+      color: #0d1728;
+      margin-bottom: 26px;
+    }
+
+    .benefits {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .benefit {
+      width: 150px;
+      background: #fff;
+      border: 1px solid #e6e6e6;
+      border-radius: 12px;
+      padding: 16px 10px;
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.04);
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .benefit span {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .content {
+      padding: 8px 28px 32px;
+      background: #fff;
+    }
+
+    .form-box {
+      background: var(--cream);
+      border: 1px solid #ffd68b;
+      border-radius: 10px;
+      padding: 26px 22px 20px;
+      margin-top: 0;
+    }
+
+    .box-title {
+      font-family: "Cinzel", serif;
+      color: var(--red-dark);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .box-title span {
+      font-family: "Inter", sans-serif;
+      width: 23px;
+      height: 23px;
+      background: var(--red-dark);
+      color: #fff;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .desc {
+      font-size: 17px;
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      color: #c91522;
+      font-weight: 800;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #ffc8c8;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 17px;
+      font-family: "Inter", sans-serif;
+      margin-bottom: 18px;
+      outline: none;
+      background: #fff;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(239, 51, 51, 0.12);
+    }
+
+    textarea {
+      min-height: 105px;
+      resize: vertical;
+    }
+
+    .info {
+      background: #e8f3ff;
+      border: 1px solid #8ac2ff;
+      color: #0967c9;
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin: 2px 0 26px;
+      font-size: 16px;
+    }
+
+    .info strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 17px;
+    }
+
+    .info ul {
+      padding-left: 18px;
+    }
+
+    .btn {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      padding: 16px 14px;
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: "Inter", sans-serif;
+    }
+
+    .btn-submit {
+      background: var(--red);
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .btn-back {
+      background: #fff;
+      color: var(--red);
+      border: 1px solid var(--red);
+    }
+
+    .secure {
+      margin-top: 20px;
+      background: #eaf7ed;
+      color: #167036;
+      border: 1px solid #49ac61;
+      border-radius: 8px;
+      padding: 13px 15px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .secure strong {
+      font-weight: 700;
+    }
+
+    footer {
+      text-align: center;
+      color: #8b8f96;
+      font-size: 16px;
+      padding: 0 15px 26px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 18px 10px;
+      }
+
+      .header {
+        padding: 38px 18px 30px;
+      }
+
+      .content {
+        padding: 8px 14px 26px;
+      }
+
+      .form-box {
+        padding: 22px 16px 18px;
+      }
+
+      .benefit {
+        width: 100%;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .box-title {
+        font-size: 19px;
+      }
+
+      input,
+      textarea,
+      .desc,
+      .info {
+        font-size: 15px;
+      }
+
+      .btn {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="wrapper">
+
+    <section class="header">
+      <div class="icon-return">↻</div>
+
+      <h1>Solicitar Reembolso</h1>
+
+      <p class="subtitle">
+        Garantia de 100% de satisfação – Processo rápido e seguro
+      </p>
+
+      <div class="benefits">
+        <div class="benefit">
+          <span>🛡️</span>
+          100% Seguro
+        </div>
+
+        <div class="benefit">
+          <span>🕘</span>
+          Até 5 dias úteis
+        </div>
+
+        <div class="benefit">
+          <span>✅</span>
+          Garantia Total
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+
+      <form class="form-box" action="mailto:suporte@novenanossasenhora.site" method="POST" enctype="text/plain">
+        <div class="box-title">
+          <span>!</span>
+          Informações para Reembolso
+        </div>
+
+        <p class="desc">
+          Preencha os dados abaixo para processar sua solicitação
+        </p>
+
+        <label for="nome">Nome completo *</label>
+        <input id="nome" name="Nome completo" type="text" placeholder="Digite seu nome completo" required>
+
+        <label for="email">E-mail *</label>
+        <input id="email" name="E-mail" type="email" placeholder="Digite seu e-mail" required>
+
+        <label for="cpf">CPF *</label>
+        <input id="cpf" name="CPF" type="text" placeholder="Digite seu CPF" required>
+
+        <label for="motivo">Motivo do reembolso *</label>
+        <textarea id="motivo" name="Motivo do reembolso" placeholder="Descreva o motivo da sua solicitação de reembolso..." required></textarea>
+
+        <div class="info">
+          <strong>Importante</strong>
+          <ul>
+            <li>O reembolso será processado em até 5 dias úteis</li>
+            <li>O valor será creditado no mesmo método de pagamento utilizado</li>
+            <li>Você receberá uma confirmação por e-mail</li>
+          </ul>
+        </div>
+
+        <button class="btn btn-submit" type="submit">
+          ↻ Confirmar Solicitação de Reembolso
+        </button>
+
+        <a class="btn btn-back" href="https://novenanossasenhora.site/jornada-de-7-dias/">
+          ← Voltar
+        </a>
+      </form>
+
+      <div class="secure">
+        🛡️ Seus dados estão <strong>protegidos e seguros</strong>
+      </div>
+
+    </section>
+
+    <footer>
+      © 2026 Novena de Nossa Senhora Desatadora de Nos
+    </footer>
+
+  </main>
+
+</body>
+
+</html>

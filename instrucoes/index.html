@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Instruções - Novena de Nossa Senhora Desatadora de Nós</title>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #06154a;
+      --bg-dark: #030f38;
+      --gold: #d4af37;
+      --gold-light: #f2d675;
+      --white: #ffffff;
+      --text: #dfe4f5;
+      --card: rgba(15, 32, 66, 0.82);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1a365d 0%, #0f2042 100%);
+      background-attachment: fixed;
+      font-family: 'Lato', sans-serif;
+      color: white;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/crosses.png');
+      opacity: .05;
+      z-index: -1;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    .title-font {
+      font-family: 'Cinzel', serif;
+    }
+
+    .hero {
+      padding-top: 90px;
+      padding-bottom: 70px;
+      text-align: center;
+    }
+
+    .main-title {
+      color: var(--gold);
+      font-size: 58px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      font-family: 'Cinzel', serif;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      line-height: 1.6;
+      color: var(--text);
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .btn-custom {
+      padding: 15px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: bold;
+      transition: .25s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-primary-custom {
+      background: linear-gradient(to right, var(--gold), var(--gold-light));
+      color: #07153f;
+      box-shadow: 0 8px 20px rgba(212, 175, 55, .28);
+    }
+
+    .btn-primary-custom:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-outline-custom {
+      border: 2px solid rgba(255, 255, 255, .25);
+      color: white;
+    }
+
+    .btn-outline-custom:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    section {
+      padding: 35px 0;
+    }
+
+    .section-card {
+      background: var(--card);
+      border: 1px solid rgba(212, 175, 55, .35);
+      border-radius: 18px;
+      padding: 35px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .18);
+    }
+
+    .section-title {
+      color: var(--gold);
+      font-size: 34px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 1px solid rgba(212, 175, 55, .25);
+      padding-bottom: 14px;
+      font-family: 'Cinzel', serif;
+    }
+
+    .section-content {
+      color: var(--text);
+      font-size: 20px;
+      line-height: 1.85;
+    }
+
+    .instruction-list {
+      list-style: none;
+      margin-top: 25px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .instruction-list li {
+      position: relative;
+      padding-left: 34px;
+      line-height: 1.8;
+    }
+
+    .instruction-list li::before {
+      content: "\f05a";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: var(--gold);
+    }
+
+    .highlight-box {
+      background: rgba(212, 175, 55, .08);
+      border-left: 4px solid var(--gold);
+      padding: 24px;
+      border-radius: 0 12px 12px 0;
+      margin-top: 30px;
+      color: #fff7d6;
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    .mini-card {
+      background: rgba(0, 0, 0, .12);
+      border: 1px solid rgba(212, 175, 55, .25);
+      border-radius: 14px;
+      padding: 22px;
+      margin-top: 18px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .mini-icon {
+      color: var(--gold);
+      font-size: 30px;
+      min-width: 30px;
+    }
+
+    .mini-content h4 {
+      color: var(--gold);
+      font-size: 22px;
+      margin-bottom: 6px;
+      font-family: 'Cinzel', serif;
+    }
+
+    .mini-content p {
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 18px;
+    }
+
+    .tip-box {
+      border: 1px dashed rgba(212, 175, 55, .5);
+      background: rgba(0, 0, 0, .08);
+      border-radius: 14px;
+      padding: 25px;
+      margin-top: 30px;
+    }
+
+    .tip-title {
+      color: var(--gold);
+      font-size: 22px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Cinzel', serif;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      color: var(--gold);
+      margin: 30px 0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(212, 175, 55, .5), transparent);
+    }
+
+    footer {
+      border-top: 1px solid rgba(212, 175, 55, .2);
+      padding: 40px 0;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    footer p {
+      line-height: 1.8;
+      color: #d8def2;
+    }
+
+    footer a {
+      color: white;
+    }
+
+    @media(max-width:768px) {
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      .main-title {
+        font-size: 38px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .section-content {
+        font-size: 17px;
+      }
+
+      .mini-card {
+        flex-direction: column;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn-custom {
+        width: 100%;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <h1 class="main-title">
+        Instruções para a Novena de Nossa Senhora Desatadora de Nós
+      </h1>
+
+      <p class="subtitle">
+        Um guia completo para viver plenamente os 7 dias de oração.
+      </p>
+
+      <div class="buttons">
+
+        <!-- BOTÃO VOLTAR - ALTERAR SLUG SE DESEJAR -->
+        <a href="https://novenanossasenhora.site/inicio-oracoes-principal/" class="btn-custom btn-outline-custom">
+          <i class="fa-solid fa-arrow-left"></i>
+          Voltar ao Início
+        </a>
+
+        <!-- BOTÃO PRINCIPAL - ALTERAR SLUG SE DESEJAR -->
+        <a href="https://novenanossasenhora.site/jornada-de-7-dias/" class="btn-custom btn-primary-custom">
+          <i class="fa-solid fa-play"></i>
+          Iniciar Jornada
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTEÚDO -->
+
+  <section>
+
+    <div class="container">
+
+      <!-- PREPARAÇÃO -->
+
+      <div class="section-card">
+
+        <h2 class="section-title">
+          <i class="fa-solid fa-hands-praying"></i>
+          Preparação Espiritual
+        </h2>
+
+        <div class="section-content">
+
+          <p>
+            Antes de iniciar a quaresma de 7 dias, é importante preparar-se espiritualmente para receber as graças deste período especial de oração.
+          </p>
+
+          <ul class="instruction-list">
+
+            <li>
+              <strong>Confissão:</strong> Se possível, receba o sacramento da confissão antes de iniciar a quaresma para começar com o coração purificado.
+            </li>
+
+            <li>
+              <strong>Intenção:</strong> Defina claramente qual graça especial deseja pedir durante estes 7 dias.
+            </li>
+
+            <li>
+              <strong>Jejum Preparatório:</strong> Considere fazer um pequeno jejum antes do início da jornada.
+            </li>
+
+            <li>
+              <strong>Estudo Prévio:</strong> Dedique alguns momentos para conhecer mais sobre Nossa Senhora Desatadora de Nós.
+            </li>
+
+          </ul>
+
+          <div class="highlight-box">
+            “Reze, tenha fé e não se preocupe. Deus é misericordioso e ouvirá sua oração.”
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- HORÁRIOS -->
+
+      <div class="section-card">
+
+        <h2 class="section-title">
+          <i class="fa-solid fa-clock"></i>
+          Horários Recomendados
+        </h2>
+
+        <div class="section-content">
+
+          <p>
+            Escolher o momento ideal para suas orações diárias contribui significativamente para a eficácia da sua quaresma.
+          </p>
+
+          <div class="mini-card">
+
+            <div class="mini-icon">
+              <i class="fa-solid fa-sun"></i>
+            </div>
+
+            <div class="mini-content">
+
+              <h4>Manhã (5h-7h)</h4>
+
+              <p>
+                O horário ideal para iniciar o dia com tranquilidade espiritual.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="mini-card">
+
+            <div class="mini-icon">
+              <i class="fa-solid fa-moon"></i>
+            </div>
+
+            <div class="mini-content">
+
+              <h4>Noite (21h-23h)</h4>
+
+              <p>
+                Momento de silêncio e reflexão antes de dormir.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="mini-card">
+
+            <div class="mini-icon">
+              <i class="fa-solid fa-church"></i>
+            </div>
+
+            <div class="mini-content">
+
+              <h4>Hora Angelical (18h)</h4>
+
+              <p>
+                Horário tradicionalmente ligado à oração e à contemplação espiritual.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="divider">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+
+      <!-- AMBIENTE -->
+
+      <div class="section-card">
+
+        <h2 class="section-title">
+          <i class="fa-solid fa-house"></i>
+          Ambiente de Oração
+        </h2>
+
+        <div class="section-content">
+
+          <ul class="instruction-list">
+
+            <li>
+              Escolha um espaço tranquilo e silencioso.
+            </li>
+
+            <li>
+              Desligue notificações e distrações.
+            </li>
+
+            <li>
+              Utilize símbolos religiosos se desejar.
+            </li>
+
+            <li>
+              Crie um ambiente confortável e espiritual.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- COMO REZAR -->
+
+      <div class="section-card">
+
+        <h2 class="section-title">
+          <i class="fa-solid fa-book-open"></i>
+          Como Rezar as Orações
+        </h2>
+
+        <div class="section-content">
+
+          <ul class="instruction-list">
+
+            <li>
+              Inicie com o sinal da cruz.
+            </li>
+
+            <li>
+              Leia cada oração lentamente.
+            </li>
+
+            <li>
+              Faça pausas de reflexão.
+            </li>
+
+            <li>
+              Finalize agradecendo pelas graças recebidas.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- BOTÕES -->
+
+      <div class="buttons">
+
+        <!-- BOTÃO VOLTAR - ALTERAR SLUG SE DESEJAR -->
+        <a href="https://novenanossasenhora.site/inicio-oracoes-principal/" class="btn-custom btn-outline-custom">
+          <i class="fa-solid fa-house"></i>
+          Voltar ao Início
+        </a>
+
+        <!-- BOTÃO PRINCIPAL - ALTERAR SLUG SE DESEJAR -->
+        <a href="https://novenanossasenhora.site/jornada-de-7-dias/" class="btn-custom btn-primary-custom">
+          <i class="fa-solid fa-play"></i>
+          Iniciar Jornada de 7 Dias
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <p>
+        © 2026 • Nossa Senhora Desatadora de Nós
+      </p>
+
+      <p>
+        Contato:
+        <a href="mailto:suporte@novenanossasenhora.site">
+          suporte@novenanossasenhora.site
+        </a>
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
