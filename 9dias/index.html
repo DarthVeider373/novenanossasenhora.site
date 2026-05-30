@@ -1,0 +1,807 @@
+<!DOCTYPE html><html><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;"><meta http-equiv="x-dns-prefetch-control" content="off"><script src="https://puc.poecdn.net/authenticated_preview_page/standard.3ef2c256959faf5a756d.js"></script>
+    <meta charset="utf-8">
+    <title>Poe</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://puc.poecdn.net/authenticated_preview_page/disableWebRTC.9710cebe07429a9e8e06.js"></script><meta name="x-poe-allow-downloads" content="true"><meta name="x-poe-datastore-behavior" content="disabled"><script src="https://puc.poecdn.net/authenticated_preview_page/tw.50ec1b0612bf5b0c30a5.js"></script><script src="https://puc.poecdn.net/authenticated_preview_page/deps.faccd16000d314dc16d5.js"></script><script src="https://puc.poecdn.net/authenticated_preview_page/exports.b0f0f482cdeb5302b0b9.js"></script><script src="https://puc.poecdn.net/authenticated_preview_page/renderer.75c73ae6b4235f62945a.js"></script><script>Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _react = require('react'); var _react2 = _interopRequireDefault(_react);
+var _framermotion = require('framer-motion');
+var _lucidereact = require('lucide-react');
+
+const quizSteps = [
+  {
+    tipo: 'intro',
+    titulo: 'Descubra Qual Nó Nossa Senhora Quer Desatar na Sua Vida',
+    subtitulo: 'Um teste espiritual gratuito de 2 minutos que já transformou a vida de mais de 47.000 mulheres de fé.',
+    cta: 'Começar o Teste Agora'
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'identificacao',
+    pergunta: 'Qual é o seu primeiro nome?',
+    inputType: 'text',
+    placeholder: 'Digite seu nome...'
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'fe',
+    pergunta: 'Como você descreveria sua relação com Nossa Senhora hoje?',
+    opcoes: [
+      'Muito próxima — rezo para ela todos os dias',
+      'Tenho devoção, mas poderia ser mais presente',
+      'Gostaria de me aproximar mais',
+      'Estou começando agora essa conexão'
+    ]
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'dor',
+    pergunta: 'Qual sentimento mais te domina nos últimos meses?',
+    opcoes: [
+      'Ansiedade e preocupação constante',
+      'Tristeza e solidão',
+      'Medo do futuro',
+      'Raiva e frustração',
+      'Sensação de estar perdida'
+    ]
+  },
+  {
+    tipo: 'mensagem',
+    titulo: 'Você não está sozinha...',
+    texto: '73% das mulheres que fizeram este teste relataram sentir exatamente o mesmo. Nossa Senhora conhece cada lágrima sua e quer te ajudar.',
+    emoji: '🙏'
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'nos',
+    pergunta: 'Qual dessas áreas da sua vida está mais "amarrada" agora?',
+    opcoes: [
+      'Família — brigas, distância, mágoas',
+      'Saúde — doenças, dores, cansaço',
+      'Finanças — dívidas, falta de dinheiro',
+      'Relacionamento — solidão ou conflitos',
+      'Trabalho — insatisfação ou desemprego',
+      'Espiritualidade — fé abalada'
+    ]
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'nos',
+    pergunta: 'Há quanto tempo você carrega esse "nó" na sua vida?',
+    opcoes: [
+      'Menos de 6 meses',
+      'Entre 6 meses e 1 ano',
+      'Entre 1 e 3 anos',
+      'Mais de 3 anos',
+      'Praticamente a vida inteira'
+    ]
+  },
+  {
+    tipo: 'mensagem',
+    titulo: 'Sabia que...',
+    texto: 'Quanto mais tempo um nó permanece, mais entrelaçado ele fica com outras áreas da vida. Mas para Nossa Senhora, NENHUM nó é impossível de desatar.',
+    emoji: '✨'
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'emocional',
+    pergunta: 'Você já se pegou chorando sem motivo aparente?',
+    opcoes: [
+      'Sim, com frequência',
+      'Às vezes',
+      'Raramente',
+      'Não, mas sinto vontade'
+    ]
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'emocional',
+    pergunta: 'Como está seu sono atualmente?',
+    opcoes: [
+      'Durmo mal — acordo cansada',
+      'Demoro para pegar no sono (pensamentos)',
+      'Acordo no meio da noite preocupada',
+      'Durmo bem na maioria das vezes'
+    ]
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'espiritual',
+    pergunta: 'Com que frequência você reza ou ora?',
+    opcoes: [
+      'Todos os dias',
+      'Algumas vezes por semana',
+      'Só quando estou desesperada',
+      'Quase nunca — sinto dificuldade'
+    ]
+  },
+  {
+    tipo: 'mensagem',
+    titulo: 'Nossa Senhora te ouve...',
+    texto: 'Não importa se você reza pouco ou muito. O que importa é a sinceridade do seu coração. Maria é Mãe — ela nunca rejeita um filho que clama.',
+    emoji: '💙'
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'espiritual',
+    pergunta: 'Você já sentiu que suas orações "não são ouvidas"?',
+    opcoes: [
+      'Sim, muitas vezes me sinto assim',
+      'Às vezes tenho essa impressão',
+      'Raramente — confio que Deus ouve',
+      'Não sei se rezo da forma certa'
+    ]
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'nos',
+    pergunta: 'Existe alguma pessoa que você precisa perdoar mas não consegue?',
+    opcoes: [
+      'Sim — essa mágoa me consome',
+      'Sim, mas estou tentando',
+      'Já perdoei, mas ainda dói',
+      'Não tenho mágoas pendentes'
+    ]
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'familia',
+    pergunta: 'Como está a situação da sua família hoje?',
+    opcoes: [
+      'Estamos passando por conflitos sérios',
+      'Há distância e frieza entre nós',
+      'Tenho preocupação com alguém da família',
+      'Minha família está bem, graças a Deus'
+    ]
+  },
+  {
+    tipo: 'mensagem',
+    titulo: 'Você sabia?',
+    texto: '92% das mulheres que completaram a Novena de 9 Dias relataram melhora significativa nas relações familiares. Nossa Senhora age primeiro no coração.',
+    emoji: '👨‍👩‍👧‍👦'
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'saude',
+    pergunta: 'Sua saúde física ou emocional te preocupa?',
+    opcoes: [
+      'Sim — tenho uma doença ou condição que me aflige',
+      'Sim — sinto cansaço e dores frequentes',
+      'Estou emocionalmente esgotada',
+      'Minha saúde está razoável'
+    ]
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'financeiro',
+    pergunta: 'A situação financeira te tira o sono?',
+    opcoes: [
+      'Sim — estou em situação muito difícil',
+      'Tenho dívidas que me preocupam',
+      'Vivo apertada mas consigo me manter',
+      'Financeiramente estou tranquila'
+    ]
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'profundidade',
+    pergunta: 'Se Nossa Senhora pudesse desatar UM nó da sua vida agora, qual seria?',
+    inputType: 'textarea',
+    placeholder: 'Escreva aqui o maior nó da sua vida...'
+  },
+  {
+    tipo: 'mensagem',
+    titulo: 'Esse pedido já foi ouvido...',
+    texto: 'No momento em que você escreveu essas palavras com sinceridade, Nossa Senhora já recebeu seu clamor. Ela está atenta ao seu coração.',
+    emoji: '🙏✨'
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'compromisso',
+    pergunta: 'Você estaria disposta a dedicar 15 minutos por dia durante 9 dias para transformar sua vida?',
+    opcoes: [
+      'Sim! Faria qualquer coisa para desatar meus nós',
+      'Sim, consigo separar esse tempo',
+      'Teria que me organizar, mas tentaria',
+      'Acho difícil, mas quero tentar'
+    ]
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'experiencia',
+    pergunta: 'Você já rezou alguma novena antes?',
+    opcoes: [
+      'Sim, várias — sou devota',
+      'Sim, uma ou duas vezes',
+      'Comecei mas não consegui terminar',
+      'Nunca — esta seria minha primeira'
+    ]
+  },
+  {
+    tipo: 'mensagem',
+    titulo: 'Por que muitas desistem...',
+    texto: 'A maioria das pessoas não termina novenas porque não tem uma estrutura clara, guia diário e acompanhamento. Foi por isso que criamos algo especial para você...',
+    emoji: '💡'
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'desejo',
+    pergunta: 'O que você mais deseja sentir ao final desses 9 dias?',
+    opcoes: [
+      'Paz interior e alívio no coração',
+      'Libertação de uma situação que me prende',
+      'Fortalecimento da minha fé',
+      'Uma mudança concreta na minha vida',
+      'Todas as anteriores'
+    ]
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'urgencia',
+    pergunta: 'De 1 a 5, quão urgente é para você resolver esse nó?',
+    opcoes: [
+      '5 — Extremamente urgente, não aguento mais',
+      '4 — Muito urgente',
+      '3 — Importante mas não desesperador',
+      '2 — Moderado',
+      '1 — Posso esperar mais'
+    ]
+  },
+  {
+    tipo: 'mensagem',
+    titulo: 'Não espere mais...',
+    texto: 'Cada dia que um nó permanece, ele se aperta mais. Nossa Senhora quer agir AGORA na sua vida. Falta pouco para você descobrir o caminho.',
+    emoji: '⏰'
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'motivacao',
+    pergunta: 'O que te motivou a fazer este teste hoje?',
+    opcoes: [
+      'Sinto que preciso de ajuda espiritual urgente',
+      'Quero fortalecer minha relação com Nossa Senhora',
+      'Alguém me indicou e senti no coração',
+      'Vi algo sobre isso e senti que era para mim',
+      'Não sei explicar — só senti que deveria'
+    ]
+  },
+  {
+    tipo: 'pergunta',
+    categoria: 'crenca',
+    pergunta: 'Você acredita que Nossa Senhora pode desatar os nós da sua vida?',
+    opcoes: [
+      'Sim! Creio com todo o meu coração',
+      'Quero acreditar — preciso de mais fé',
+      'Tenho esperança de que sim',
+      'Não sei, mas estou aberta'
+    ]
+  },
+  {
+    tipo: 'mensagem',
+    titulo: 'Sua fé já é suficiente.',
+    texto: 'Jesus disse: "Se tivésseis fé do tamanho de um grão de mostarda..." O simples fato de você estar aqui já mostra que sua fé é real. Nossa Senhora fará o resto.',
+    emoji: '🌱'
+  },
+  {
+    tipo: 'resultado',
+    titulo: 'Seu Resultado Está Pronto'
+  }
+];
+
+const testimonials = [
+  { nome: "Maria Eduarda S.", cidade: "São Paulo/SP", texto: "No 3º dia da novena, meu marido pediu perdão depois de 2 anos sem nos falar. Chorei muito. Nossa Senhora é real!", estrelas: 5 },
+  { nome: "Ana Beatriz R.", cidade: "Belo Horizonte/MG", texto: "Eu tinha dívidas de 15 mil reais. No 7º dia, recebi uma proposta de trabalho que mudou tudo. Deus é fiel!", estrelas: 5 },
+  { nome: "Tereza C.", cidade: "Recife/PE", texto: "Minha filha estava longe de Deus há 5 anos. Depois da novena, ela voltou para a igreja chorando. Milagre!", estrelas: 5 },
+  { nome: "Francisca L.", cidade: "Porto Alegre/RS", texto: "Eu sofria de ansiedade terrível. Após os 9 dias, sinto uma paz que nunca tive. Nossa Senhora curou meu coração.", estrelas: 5 },
+  { nome: "Josefa M.", cidade: "Salvador/BA", texto: "Rezei pela cura do meu câncer. Os exames voltaram limpos. Os médicos não explicam. Eu sei que foi Ela.", estrelas: 5 },
+  { nome: "Aparecida G.", cidade: "Curitiba/PR", texto: "Meu casamento estava destruído. Depois da novena, redescobri o amor pelo meu esposo. Estamos renovados!", estrelas: 5 }
+];
+
+const NossaSenhoraIllustration = ({ className = "" }) => (
+  _react2.default.createElement('svg', { viewBox: "0 0 200 300"   , className: className, xmlns: "http://www.w3.org/2000/svg",}
+    , _react2.default.createElement('defs', null
+      , _react2.default.createElement('radialGradient', { id: "haloQ", cx: "50%", cy: "30%", r: "50%",}
+        , _react2.default.createElement('stop', { offset: "0%", stopColor: "#fbbf24", stopOpacity: "0.8",})
+        , _react2.default.createElement('stop', { offset: "100%", stopColor: "#fbbf24", stopOpacity: "0",})
+      )
+      , _react2.default.createElement('linearGradient', { id: "mantleQ", x1: "0%", y1: "0%", x2: "0%", y2: "100%",}
+        , _react2.default.createElement('stop', { offset: "0%", stopColor: "#1e3a5f",})
+        , _react2.default.createElement('stop', { offset: "100%", stopColor: "#1e40af",})
+      )
+    )
+    , _react2.default.createElement('ellipse', { cx: "100", cy: "80", rx: "60", ry: "60", fill: "url(#haloQ)",})
+    , _react2.default.createElement('ellipse', { cx: "100", cy: "68", rx: "10", ry: "12", fill: "#fde8d0",})
+    , _react2.default.createElement('ellipse', { cx: "97", cy: "66", rx: "1.5", ry: "1.5", fill: "#4a3520",})
+    , _react2.default.createElement('ellipse', { cx: "103", cy: "66", rx: "1.5", ry: "1.5", fill: "#4a3520",})
+    , _react2.default.createElement('path', { d: "M97 72 Q100 74 103 72"     , fill: "none", stroke: "#c4756e", strokeWidth: "0.8",})
+    , _react2.default.createElement('path', { d: "M85 60 Q100 52 115 60 L118 65 Q100 58 82 65 Z"            , fill: "#1e3a5f",})
+    , _react2.default.createElement('path', { d: "M70 80 Q65 120 68 200 Q80 260 100 280 Q120 260 132 200 Q135 120 130 80 Q115 70 100 68 Q85 70 70 80 Z"                          , fill: "url(#mantleQ)",})
+    , _react2.default.createElement('path', { d: "M80 90 Q78 140 82 200 Q90 240 100 255 Q110 240 118 200 Q122 140 120 90 Q110 82 100 80 Q90 82 80 90 Z"                          , fill: "#f5f0e8",})
+    , _react2.default.createElement('path', { d: "M88 130 Q92 125 96 128 L96 145 Q92 148 88 145 Z"            , fill: "#fde8d0",})
+    , _react2.default.createElement('path', { d: "M104 130 Q108 125 112 128 L112 145 Q108 148 104 145 Z"            , fill: "#fde8d0",})
+    , _react2.default.createElement('path', { d: "M92 138 Q100 140 108 138"     , fill: "none", stroke: "#d4a574", strokeWidth: "0.8",})
+    , [0,1,2,3,4,5,6,7,8,9,10,11].map(i => (
+      _react2.default.createElement('circle', { key: i, cx: 100 + 22 * Math.cos(i * Math.PI / 6), cy: 70 + 22 * Math.sin(i * Math.PI / 6), r: "1.2", fill: "#fbbf24", opacity: "0.7",})
+    ))
+    , _react2.default.createElement('path', { d: "M85 150 Q100 155 115 150"     , fill: "none", stroke: "#d4a574", strokeWidth: "1.5", opacity: "0.6",})
+    , _react2.default.createElement('path', { d: "M88 155 Q100 160 112 155"     , fill: "none", stroke: "#d4a574", strokeWidth: "1.2", opacity: "0.5",})
+    , _react2.default.createElement('path', { d: "M90 160 Q100 164 110 160"     , fill: "none", stroke: "#d4a574", strokeWidth: "1", opacity: "0.4",})
+  )
+);
+
+const OrnamentalDivider = () => (
+  _react2.default.createElement('div', { className: "flex items-center justify-center my-4"   ,}
+    , _react2.default.createElement('div', { className: "h-px w-10 bg-amber-300 opacity-60"   ,})
+    , _react2.default.createElement('svg', { viewBox: "0 0 40 20"   , className: "w-8 h-4 mx-2"  , xmlns: "http://www.w3.org/2000/svg",}
+      , _react2.default.createElement('path', { d: "M5 10 Q10 2 20 10 Q30 18 35 10"         , fill: "none", stroke: "#d97706", strokeWidth: "1", opacity: "0.7",})
+      , _react2.default.createElement('circle', { cx: "20", cy: "10", r: "2", fill: "#d97706", opacity: "0.7",})
+      , _react2.default.createElement('path', { d: "M5 10 Q10 18 20 10 Q30 2 35 10"         , fill: "none", stroke: "#d97706", strokeWidth: "1", opacity: "0.7",})
+    )
+    , _react2.default.createElement('div', { className: "h-px w-10 bg-amber-300 opacity-60"   ,})
+  )
+);
+
+const PulsingDot = () => (
+  _react2.default.createElement('span', { className: "relative flex h-3 w-3"   ,}
+    , _react2.default.createElement('span', { className: "animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"       ,})
+    , _react2.default.createElement('span', { className: "relative inline-flex rounded-full h-3 w-3 bg-red-500"     ,})
+  )
+);
+
+ function QuizSalesPage() {
+  const [currentStep, setCurrentStep] = _react.useState.call(void 0, 0);
+  const [answers, setAnswers] = _react.useState.call(void 0, {});
+  const [userName, setUserName] = _react.useState.call(void 0, '');
+  const [textInput, setTextInput] = _react.useState.call(void 0, '');
+  const [showSalesPage, setShowSalesPage] = _react.useState.call(void 0, false);
+  const [selectedOption, setSelectedOption] = _react.useState.call(void 0, null);
+  const [countDown, setCountDown] = _react.useState.call(void 0, { hours: 2, minutes: 47, seconds: 33 });
+  const [viewersCount, setViewersCount] = _react.useState.call(void 0, 127);
+
+  _react.useEffect.call(void 0, () => {
+    const timer = setInterval(() => {
+      setCountDown(prev => {
+        let { hours, minutes, seconds } = prev;
+        seconds--;
+        if (seconds < 0) { seconds = 59; minutes--; }
+        if (minutes < 0) { minutes = 59; hours--; }
+        if (hours < 0) { hours = 0; minutes = 0; seconds = 0; }
+        return { hours, minutes, seconds };
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  _react.useEffect.call(void 0, () => {
+    const interval = setInterval(() => {
+      setViewersCount(v => v + Math.floor(Math.random() * 3) - 1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const step = quizSteps[currentStep];
+  const progress = (currentStep / (quizSteps.length - 1)) * 100;
+
+  const handleNext = () => {
+    if (currentStep < quizSteps.length - 1) {
+      if (step.tipo === 'pergunta' && step.inputType === 'text') {
+        setUserName(textInput);
+        setAnswers(prev => ({ ...prev, [currentStep]: textInput }));
+        setTextInput('');
+      } else if (step.tipo === 'pergunta' && step.inputType === 'textarea') {
+        setAnswers(prev => ({ ...prev, [currentStep]: textInput }));
+        setTextInput('');
+      }
+      setSelectedOption(null);
+      setCurrentStep(currentStep + 1);
+    } else {
+      setShowSalesPage(true);
+    }
+  };
+
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+    setAnswers(prev => ({ ...prev, [currentStep]: option }));
+    setTimeout(() => {
+      setSelectedOption(null);
+      setCurrentStep(currentStep + 1);
+    }, 600);
+  };
+
+  const handleBack = () => {
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1);
+      setSelectedOption(null);
+    }
+  };
+
+  // SALES PAGE
+  if (showSalesPage) {
+    const displayName = userName || 'querida';
+    return (
+      _react2.default.createElement('div', { className: "min-h-screen bg-white" ,}
+        /* Sticky Top Bar */
+        , _react2.default.createElement('div', { className: "sticky top-0 z-50 bg-red-700 text-white py-2 px-4 text-center text-sm flex items-center justify-center gap-2"            ,}
+          , _react2.default.createElement(PulsingDot, null )
+          , _react2.default.createElement('span', null, _react2.default.createElement('strong', null, viewersCount, " pessoas" ), " estão vendo esta página agora"     )
+        )
+
+        /* Hero Section */
+        , _react2.default.createElement('section', { className: "bg-gradient-to-b from-blue-950 via-blue-900 to-blue-800 text-white py-12 px-4"      ,}
+          , _react2.default.createElement('div', { className: "max-w-2xl mx-auto text-center"  ,}
+            , _react2.default.createElement(_framermotion.motion.div, { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8 },}
+              , _react2.default.createElement('p', { className: "text-amber-300 text-sm uppercase tracking-wider mb-4"    ,}, "✦ Resultado do seu teste espiritual ✦"      )
+              , _react2.default.createElement(NossaSenhoraIllustration, { className: "w-32 h-48 mx-auto mb-6"   ,} )
+              , _react2.default.createElement('h1', { className: "text-3xl font-bold mb-4 leading-tight"   , style: { fontFamily: 'Georgia, serif' },}
+                , displayName, ", Nossa Senhora identificou "    , _react2.default.createElement('span', { className: "text-yellow-300",}, "nós profundos" ), " na sua vida que precisam ser desatados "        , _react2.default.createElement('span', { className: "text-yellow-300",}, "urgentemente")
+              )
+              , _react2.default.createElement(OrnamentalDivider, null )
+              , _react2.default.createElement('p', { className: "text-blue-100 text-lg mt-4 leading-relaxed"   ,}, "Seu teste revelou que você carrega nós emocionais, espirituais e práticos que estão sufocando sua paz, sua saúde e sua felicidade. Mas existe um caminho..."
+
+              )
+            )
+          )
+        )
+
+        /* Problem Section */
+        , _react2.default.createElement('section', { className: "py-12 px-4 bg-amber-50"  ,}
+          , _react2.default.createElement('div', { className: "max-w-2xl mx-auto" ,}
+            , _react2.default.createElement('h2', { className: "text-2xl font-bold text-blue-900 text-center mb-8"    , style: { fontFamily: 'Georgia, serif' },}, "Você se identifica com isso?"
+
+            )
+            , _react2.default.createElement('div', { className: "space-y-4",}
+              , [
+                'Sente que carrega um peso invisível que ninguém entende',
+                'Já tentou resolver seus problemas sozinha e não conseguiu',
+                'Sente que suas orações não são ouvidas',
+                'Tem noites de insônia por causa das preocupações',
+                'Sente mágoa de alguém mas não consegue perdoar',
+                'Tem medo do futuro e do que pode acontecer',
+                'Sente que algo espiritual te prende e te impede de avançar'
+              ].map((item, i) => (
+                _react2.default.createElement(_framermotion.motion.div, { key: i, initial: { opacity: 0, x: -20 }, animate: { opacity: 1, x: 0 }, transition: { delay: i * 0.1 }, className: "flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm border border-amber-100"        ,}
+                  , _react2.default.createElement(_lucidereact.AlertTriangle, { className: "w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5"    ,} )
+                  , _react2.default.createElement('p', { className: "text-blue-800",}, item)
+                )
+              ))
+            )
+            , _react2.default.createElement('p', { className: "text-center text-blue-700 text-lg mt-8 font-medium"    , style: { fontFamily: 'Georgia, serif' },}, "Se você marcou "
+                 , _react2.default.createElement('strong', null, "pelo menos 2"  ), " desses sinais, seus nós estão se apertando cada dia mais..."
+            )
+          )
+        )
+
+        /* Solution Section */
+        , _react2.default.createElement('section', { className: "py-12 px-4 bg-white"  ,}
+          , _react2.default.createElement('div', { className: "max-w-2xl mx-auto text-center"  ,}
+            , _react2.default.createElement('p', { className: "text-amber-600 uppercase tracking-wider text-sm mb-3"    ,}, "A Solução Divina"  )
+            , _react2.default.createElement('h2', { className: "text-3xl font-bold text-blue-900 mb-6"   , style: { fontFamily: 'Georgia, serif' },}, "Novena de 9 Dias com Nossa Senhora Desatadora dos Nós"
+
+            )
+            , _react2.default.createElement(OrnamentalDivider, null )
+            , _react2.default.createElement('p', { className: "text-blue-700 text-lg leading-relaxed mt-4 mb-8"    ,}, "Um guia espiritual completo e acolhedor que vai te conduzir, dia a dia, em uma jornada de oração poderosa com a Virgem Maria — a Mãe que desata todo e qualquer nó."
+
+            )
+
+            , _react2.default.createElement('div', { className: "bg-gradient-to-b from-blue-50 to-white rounded-2xl p-8 border-2 border-blue-100 shadow-lg"       ,}
+              , _react2.default.createElement(NossaSenhoraIllustration, { className: "w-28 h-40 mx-auto mb-6 opacity-90"    ,} )
+              , _react2.default.createElement('h3', { className: "text-xl font-bold text-blue-900 mb-6"   , style: { fontFamily: 'Georgia, serif' },}, "O que você recebe:"   )
+              , _react2.default.createElement('div', { className: "space-y-4 text-left" ,}
+                , [
+                  { icon: _lucidereact.BookOpen, text: '9 Meditações Profundas — uma para cada dia, com oração específica para cada tipo de nó' },
+                  { icon: _lucidereact.Heart, text: 'Orações Poderosas — escritas com base na tradição católica e aprovadas espiritualmente' },
+                  { icon: _lucidereact.Star, text: 'Reflexões Diárias — versículos bíblicos e ensinamentos que fortalecem sua fé' },
+                  { icon: _lucidereact.Clock, text: 'Cronômetro de Oração — para te ajudar a manter o foco durante a meditação' },
+                  { icon: _lucidereact.Award, text: 'Diário Espiritual — espaço para registrar suas graças e reflexões' },
+                  { icon: _lucidereact.Gift, text: 'Certificado de Conclusão — para marcar essa conquista espiritual' },
+                  { icon: _lucidereact.Users, text: 'Guia Completo de Como Rezar — mesmo se nunca rezou uma novena antes' },
+                  { icon: _lucidereact.Shield, text: 'Acesso Vitalício — reze quantas vezes quiser, para sempre' }
+                ].map((item, i) => (
+                  _react2.default.createElement('div', { key: i, className: "flex items-start gap-3"  ,}
+                    , _react2.default.createElement('div', { className: "w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0"       ,}
+                      , _react2.default.createElement(item.icon, { className: "w-4 h-4 text-amber-600"  ,} )
+                    )
+                    , _react2.default.createElement('p', { className: "text-blue-800",}, item.text)
+                  )
+                ))
+              )
+            )
+          )
+        )
+
+        /* Testimonials */
+        , _react2.default.createElement('section', { className: "py-12 px-4 bg-gradient-to-b from-amber-50 to-white"    ,}
+          , _react2.default.createElement('div', { className: "max-w-2xl mx-auto" ,}
+            , _react2.default.createElement('h2', { className: "text-2xl font-bold text-blue-900 text-center mb-2"    , style: { fontFamily: 'Georgia, serif' },}, "Veja o que aconteceu com quem rezou:"
+
+            )
+            , _react2.default.createElement('p', { className: "text-center text-blue-600 mb-8"  ,}, "+47.000 mulheres já tiveram seus nós desatados"      )
+            , _react2.default.createElement('div', { className: "space-y-4",}
+              , testimonials.map((t, i) => (
+                _react2.default.createElement(_framermotion.motion.div, { key: i, initial: { opacity: 0, y: 10 }, animate: { opacity: 1, y: 0 }, transition: { delay: i * 0.15 }, className: "bg-white rounded-xl p-5 shadow-md border border-amber-100"     ,}
+                  , _react2.default.createElement('div', { className: "flex items-center gap-1 mb-2"   ,}
+                    , Array.from({ length: t.estrelas }).map((_, j) => (
+                      _react2.default.createElement(_lucidereact.Star, { key: j, className: "w-4 h-4 fill-yellow-400 text-yellow-400"   ,} )
+                    ))
+                  )
+                  , _react2.default.createElement('p', { className: "text-blue-800 italic mb-3"  ,}, "\"", t.texto, "\"")
+                  , _react2.default.createElement('p', { className: "text-sm text-blue-500 font-medium"  ,}, "— " , t.nome, ", " , t.cidade)
+                )
+              ))
+            )
+          )
+        )
+
+        /* Pricing Section */
+        , _react2.default.createElement('section', { className: "py-12 px-4 bg-blue-950 text-white"   ,}
+          , _react2.default.createElement('div', { className: "max-w-2xl mx-auto text-center"  ,}
+            , _react2.default.createElement('h2', { className: "text-2xl font-bold mb-2"  , style: { fontFamily: 'Georgia, serif' },}, "Quanto vale desatar os nós da sua vida?"
+
+            )
+            , _react2.default.createElement('p', { className: "text-blue-200 mb-8" ,}, "Sua paz, sua saúde, sua família... não têm preço."        )
+
+            , _react2.default.createElement('div', { className: "bg-white rounded-2xl p-8 text-blue-900 shadow-2xl border-4 border-amber-400 relative"       ,}
+              , _react2.default.createElement('div', { className: "absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-sm font-bold"           ,}, "🔥 OFERTA ESPECIAL — TEMPO LIMITADO"
+
+              )
+
+              , _react2.default.createElement('div', { className: "mt-4 mb-6" ,}
+                , _react2.default.createElement('p', { className: "text-gray-500 line-through text-lg"  ,}, "De R$ 97,00"  )
+                , _react2.default.createElement('div', { className: "flex items-center justify-center gap-2 my-2"    ,}
+                  , _react2.default.createElement('span', { className: "text-5xl font-bold text-blue-900"  ,}, "R$ 19" )
+                  , _react2.default.createElement('span', { className: "text-2xl text-blue-900" ,}, ",90")
+                )
+                , _react2.default.createElement('p', { className: "text-green-600 font-semibold text-lg"  ,}, "Economia de 80%! Apenas hoje."    )
+                , _react2.default.createElement('p', { className: "text-blue-500 text-sm mt-1"  ,}, "ou 2x de R$ 10,44 sem juros"      )
+              )
+
+              , _react2.default.createElement('div', { className: "bg-amber-50 rounded-xl p-4 mb-6 border border-amber-200"     ,}
+                , _react2.default.createElement('p', { className: "text-amber-800 font-semibold mb-2 flex items-center justify-center gap-2"      ,}
+                  , _react2.default.createElement(_lucidereact.Clock, { className: "w-5 h-5" ,} ), " Oferta expira em:"
+                )
+                , _react2.default.createElement('div', { className: "flex justify-center gap-2"  ,}
+                  , _react2.default.createElement('div', { className: "bg-red-600 text-white px-3 py-2 rounded-lg text-xl font-bold"      ,}, String(countDown.hours).padStart(2, '0'))
+                  , _react2.default.createElement('span', { className: "text-2xl font-bold text-red-600"  ,}, ":")
+                  , _react2.default.createElement('div', { className: "bg-red-600 text-white px-3 py-2 rounded-lg text-xl font-bold"      ,}, String(countDown.minutes).padStart(2, '0'))
+                  , _react2.default.createElement('span', { className: "text-2xl font-bold text-red-600"  ,}, ":")
+                  , _react2.default.createElement('div', { className: "bg-red-600 text-white px-3 py-2 rounded-lg text-xl font-bold"      ,}, String(countDown.seconds).padStart(2, '0'))
+                )
+              )
+
+              , _react2.default.createElement(_framermotion.motion.button, { whileHover: { scale: 1.02 }, whileTap: { scale: 0.98 }, className: "w-full py-5 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-xl font-bold rounded-xl shadow-lg transition-all mb-4"             ,}, "🙏 QUERO DESATAR MEUS NÓS AGORA"
+
+              )
+
+              , _react2.default.createElement('div', { className: "flex items-center justify-center gap-4 text-sm text-gray-500 mb-4"      ,}
+                , _react2.default.createElement('span', { className: "flex items-center gap-1"  ,}, _react2.default.createElement(_lucidereact.Lock, { className: "w-4 h-4" ,} ), " Pagamento Seguro"  )
+                , _react2.default.createElement('span', { className: "flex items-center gap-1"  ,}, _react2.default.createElement(_lucidereact.Shield, { className: "w-4 h-4" ,} ), " Acesso Imediato"  )
+              )
+
+              , _react2.default.createElement('div', { className: "border-t border-gray-200 pt-4"  ,}
+                , _react2.default.createElement('div', { className: "flex items-center justify-center gap-2 text-green-700"    ,}
+                  , _react2.default.createElement(_lucidereact.Shield, { className: "w-5 h-5" ,} )
+                  , _react2.default.createElement('p', { className: "font-semibold",}, "Garantia de 7 dias — Satisfação ou seu dinheiro de volta"          )
+                )
+                , _react2.default.createElement('p', { className: "text-gray-500 text-sm mt-2"  ,}, "Se não sentir a transformação, devolvemos 100% do valor. Sem perguntas."          )
+              )
+            )
+          )
+        )
+
+        /* Guarantee */
+        , _react2.default.createElement('section', { className: "py-12 px-4 bg-green-50"  ,}
+          , _react2.default.createElement('div', { className: "max-w-2xl mx-auto text-center"  ,}
+            , _react2.default.createElement(_lucidereact.Shield, { className: "w-16 h-16 text-green-600 mx-auto mb-4"    ,} )
+            , _react2.default.createElement('h2', { className: "text-2xl font-bold text-green-800 mb-4"   , style: { fontFamily: 'Georgia, serif' },}, "Garantia Total de 7 Dias"
+
+            )
+            , _react2.default.createElement('p', { className: "text-green-700 text-lg leading-relaxed"  ,}, "Se em até 7 dias você não sentir que este material está transformando sua vida espiritual, devolvemos 100% do seu investimento. Sem burocracia, sem perguntas. O risco é todo nosso. Sua única missão é rezar com fé."
+
+            )
+          )
+        )
+
+        /* FAQ */
+        , _react2.default.createElement('section', { className: "py-12 px-4 bg-white"  ,}
+          , _react2.default.createElement('div', { className: "max-w-2xl mx-auto" ,}
+            , _react2.default.createElement('h2', { className: "text-2xl font-bold text-blue-900 text-center mb-8"    , style: { fontFamily: 'Georgia, serif' },}, "Perguntas Frequentes"
+
+            )
+            , _react2.default.createElement('div', { className: "space-y-4",}
+              , [
+                { p: "Como recebo o acesso?", r: "Imediatamente após o pagamento, você recebe o acesso por e-mail. Em segundos já pode começar a rezar." },
+                { p: "Preciso entender de tecnologia?", r: "Não! É super simples. Funciona no celular, tablet ou computador. Se sabe usar WhatsApp, consegue usar." },
+                { p: "Serve para quem nunca rezou novena?", r: "Sim! O guia é feito especialmente para iniciantes. Cada passo é explicado com carinho e simplicidade." },
+                { p: "Posso rezar por outra pessoa?", r: "Com certeza! Muitas mulheres rezam por filhos, maridos, pais e outros familiares." },
+                { p: "O acesso é vitalício?", r: "Sim! Você pode rezar quantas vezes quiser, para sempre. O acesso nunca expira." },
+                { p: "É seguro comprar?", r: "Totalmente! O pagamento é processado pela plataforma mais segura do Brasil, com criptografia bancária." }
+              ].map((faq, i) => (
+                _react2.default.createElement('div', { key: i, className: "bg-blue-50 rounded-xl p-5 border border-blue-100"    ,}
+                  , _react2.default.createElement('p', { className: "font-semibold text-blue-900 mb-2"  ,}, faq.p)
+                  , _react2.default.createElement('p', { className: "text-blue-700",}, faq.r)
+                )
+              ))
+            )
+          )
+        )
+
+        /* Final CTA */
+        , _react2.default.createElement('section', { className: "py-12 px-4 bg-gradient-to-b from-blue-900 to-blue-950 text-white"     ,}
+          , _react2.default.createElement('div', { className: "max-w-2xl mx-auto text-center"  ,}
+            , _react2.default.createElement(NossaSenhoraIllustration, { className: "w-28 h-40 mx-auto mb-6 opacity-80"    ,} )
+            , _react2.default.createElement('h2', { className: "text-2xl font-bold mb-4"  , style: { fontFamily: 'Georgia, serif' },}
+              , displayName, ", Nossa Senhora está esperando por você."
+            )
+            , _react2.default.createElement('p', { className: "text-blue-200 text-lg mb-8 leading-relaxed"   ,}, "Não deixe seus nós se apertarem mais. Cada dia que passa sem oração é um dia a mais de sofrimento. Comece hoje sua transformação."
+
+            )
+            , _react2.default.createElement(_framermotion.motion.button, { whileHover: { scale: 1.02 }, whileTap: { scale: 0.98 }, className: "w-full max-w-md mx-auto py-5 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-xl font-bold rounded-xl shadow-lg transition-all block"               ,}, "🙏 SIM! QUERO COMEÇAR MINHA NOVENA"
+
+            )
+            , _react2.default.createElement('p', { className: "text-blue-300 text-sm mt-4"  ,}, "Acesso imediato • Garantia de 7 dias • R$ 19,90"         )
+            , _react2.default.createElement('p', { className: "text-blue-400 text-xs mt-8 italic"   , style: { fontFamily: 'Georgia, serif' },}, "\"Ninguém, nem mesmo o Maligno, pode tirar a fita da sua vida das mãos de Nossa Senhora.\""
+
+            )
+          )
+        )
+
+        /* Floating CTA */
+        , _react2.default.createElement('div', { className: "fixed bottom-0 left-0 right-0 bg-white border-t-2 border-amber-400 p-3 shadow-2xl z-40"         ,}
+          , _react2.default.createElement('div', { className: "max-w-md mx-auto" ,}
+            , _react2.default.createElement(_framermotion.motion.button, { whileTap: { scale: 0.98 }, className: "w-full py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-xl text-lg shadow-lg"         ,}, "🙏 DESATAR MEUS NÓS — R$ 19,90"
+
+            )
+          )
+        )
+        , _react2.default.createElement('div', { className: "h-20",})
+      )
+    );
+  }
+
+  // QUIZ INTERFACE
+  return (
+    _react2.default.createElement('div', { className: "min-h-screen bg-gradient-to-b from-blue-950 via-blue-900 to-blue-800 flex flex-col"      ,}
+      /* Header */
+      , currentStep > 0 && (
+        _react2.default.createElement('div', { className: "sticky top-0 z-10 bg-blue-950 bg-opacity-95 backdrop-blur-sm border-b border-blue-800"       ,}
+          , _react2.default.createElement('div', { className: "max-w-lg mx-auto px-4 py-3"   ,}
+            , _react2.default.createElement('div', { className: "flex items-center justify-between mb-2"   ,}
+              , _react2.default.createElement('button', { onClick: handleBack, className: "text-blue-300 hover:text-white text-sm flex items-center"    ,}
+                , _react2.default.createElement(_lucidereact.ChevronLeft, { className: "w-4 h-4" ,} ), " Voltar"
+              )
+              , _react2.default.createElement('span', { className: "text-blue-300 text-sm" ,}, currentStep, "/", quizSteps.length - 1)
+            )
+            , _react2.default.createElement('div', { className: "w-full bg-blue-800 rounded-full h-2"   ,}
+              , _react2.default.createElement(_framermotion.motion.div, { animate: { width: `${progress}%` }, transition: { duration: 0.3 }, className: "bg-gradient-to-r from-amber-400 to-yellow-300 h-2 rounded-full"    ,} )
+            )
+          )
+        )
+      )
+
+      /* Content */
+      , _react2.default.createElement('div', { className: "flex-1 flex items-center justify-center p-4"    ,}
+        , _react2.default.createElement('div', { className: "w-full max-w-lg" ,}
+          , _react2.default.createElement(_framermotion.AnimatePresence, { mode: "wait",}
+            , _react2.default.createElement(_framermotion.motion.div, { key: currentStep, initial: { opacity: 0, x: 30 }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0, x: -30 }, transition: { duration: 0.3 },}
+
+              /* INTRO */
+              , step.tipo === 'intro' && (
+                _react2.default.createElement('div', { className: "text-center",}
+                  , _react2.default.createElement(NossaSenhoraIllustration, { className: "w-36 h-52 mx-auto mb-6"   ,} )
+                  , _react2.default.createElement('h1', { className: "text-2xl font-bold text-white mb-4 leading-tight"    , style: { fontFamily: 'Georgia, serif' },}
+                    , step.titulo
+                  )
+                  , _react2.default.createElement(OrnamentalDivider, null )
+                  , _react2.default.createElement('p', { className: "text-blue-200 text-lg mb-8 mt-4"   ,}, step.subtitulo)
+                  , _react2.default.createElement(_framermotion.motion.button, { whileHover: { scale: 1.03 }, whileTap: { scale: 0.97 }, onClick: handleNext, className: "w-full py-5 bg-gradient-to-r from-amber-400 to-yellow-300 hover:from-amber-500 hover:to-yellow-400 text-blue-900 text-xl font-bold rounded-xl shadow-xl transition-all"            ,}
+                    , step.cta
+                  )
+                  , _react2.default.createElement('div', { className: "flex items-center justify-center gap-2 mt-4 text-blue-300 text-sm"      ,}
+                    , _react2.default.createElement(PulsingDot, null )
+                    , _react2.default.createElement('span', null, viewersCount, " pessoas fazendo o teste agora"     )
+                  )
+                  , _react2.default.createElement('p', { className: "text-blue-400 text-sm mt-6"  ,}, "✦ 100% Gratuito • 2 minutos • Resultado imediato ✦"         )
+                )
+              )
+
+              /* PERGUNTA */
+              , step.tipo === 'pergunta' && (
+                _react2.default.createElement('div', null
+                  , _react2.default.createElement('h2', { className: "text-xl font-semibold text-white mb-6 text-center leading-relaxed"     , style: { fontFamily: 'Georgia, serif' },}
+                    , step.pergunta
+                  )
+
+                  , step.inputType === 'text' && (
+                    _react2.default.createElement('div', { className: "space-y-4",}
+                      , _react2.default.createElement('input', { type: "text", value: textInput, onChange: (e) => setTextInput(e.target.value), placeholder: step.placeholder, className: "w-full py-4 px-5 text-lg rounded-xl border-2 border-amber-300 focus:border-yellow-400 focus:outline-none bg-white text-blue-900"          ,} )
+                      , _react2.default.createElement('button', { onClick: handleNext, disabled: !textInput.trim(), className: `w-full py-4 rounded-xl text-lg font-bold transition-all ${textInput.trim() ? 'bg-gradient-to-r from-amber-400 to-yellow-300 text-blue-900' : 'bg-blue-800 text-blue-500 cursor-not-allowed'}`,}, "Continuar "
+                         , _react2.default.createElement(_lucidereact.ChevronRight, { className: "inline w-5 h-5"  ,} )
+                      )
+                    )
+                  )
+
+                  , step.inputType === 'textarea' && (
+                    _react2.default.createElement('div', { className: "space-y-4",}
+                      , _react2.default.createElement('textarea', { value: textInput, onChange: (e) => setTextInput(e.target.value), placeholder: step.placeholder, className: "w-full py-4 px-5 text-lg rounded-xl border-2 border-amber-300 focus:border-yellow-400 focus:outline-none bg-white text-blue-900 min-h-32 resize-y"            ,} )
+                      , _react2.default.createElement('button', { onClick: handleNext, disabled: !textInput.trim(), className: `w-full py-4 rounded-xl text-lg font-bold transition-all ${textInput.trim() ? 'bg-gradient-to-r from-amber-400 to-yellow-300 text-blue-900' : 'bg-blue-800 text-blue-500 cursor-not-allowed'}`,}, "Continuar "
+                         , _react2.default.createElement(_lucidereact.ChevronRight, { className: "inline w-5 h-5"  ,} )
+                      )
+                    )
+                  )
+
+                  , step.opcoes && (
+                    _react2.default.createElement('div', { className: "space-y-3",}
+                      , step.opcoes.map((opcao, i) => (
+                        _react2.default.createElement(_framermotion.motion.button, { key: i, whileHover: { scale: 1.02 }, whileTap: { scale: 0.98 }, onClick: () => handleOptionSelect(opcao), className: `w-full py-4 px-5 text-left rounded-xl border-2 transition-all text-lg ${selectedOption === opcao ? 'bg-amber-400 border-amber-400 text-blue-900' : 'bg-white bg-opacity-10 border-blue-600 text-white hover:border-amber-400 hover:bg-white hover:bg-opacity-5'}`,}
+                          , _react2.default.createElement('span', { className: "flex items-center gap-3"  ,}
+                            , _react2.default.createElement('span', { className: `w-7 h-7 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${selectedOption === opcao ? 'border-blue-900 bg-blue-900' : 'border-blue-400'}`,}
+                              , selectedOption === opcao && _react2.default.createElement(_lucidereact.Check, { className: "w-4 h-4 text-white"  ,} )
+                            )
+                            , opcao
+                          )
+                        )
+                      ))
+                    )
+                  )
+                )
+              )
+
+              /* MENSAGEM */
+              , step.tipo === 'mensagem' && (
+                _react2.default.createElement('div', { className: "text-center",}
+                  , _react2.default.createElement('div', { className: "text-5xl mb-6" ,}, step.emoji)
+                  , _react2.default.createElement('h2', { className: "text-2xl font-bold text-yellow-300 mb-4"   , style: { fontFamily: 'Georgia, serif' },}
+                    , step.titulo
+                  )
+                  , _react2.default.createElement('p', { className: "text-blue-100 text-lg leading-relaxed mb-8"   ,}
+                    , step.texto
+                  )
+                  , _react2.default.createElement(_framermotion.motion.button, { whileHover: { scale: 1.03 }, whileTap: { scale: 0.97 }, onClick: handleNext, className: "w-full py-4 bg-gradient-to-r from-amber-400 to-yellow-300 text-blue-900 text-lg font-bold rounded-xl transition-all"         ,}, "Continuar "
+                     , _react2.default.createElement(_lucidereact.ChevronRight, { className: "inline w-5 h-5"  ,} )
+                  )
+                )
+              )
+
+              /* RESULTADO */
+              , step.tipo === 'resultado' && (
+                _react2.default.createElement('div', { className: "text-center",}
+                  , _react2.default.createElement(_framermotion.motion.div, { initial: { scale: 0 }, animate: { scale: 1 }, transition: { type: 'spring', duration: 0.8 },}
+                    , _react2.default.createElement('div', { className: "w-24 h-24 bg-gradient-to-r from-amber-400 to-yellow-300 rounded-full flex items-center justify-center mx-auto mb-6"          ,}
+                      , _react2.default.createElement(_lucidereact.Check, { className: "w-12 h-12 text-blue-900"  ,} )
+                    )
+                  )
+                  , _react2.default.createElement('h2', { className: "text-2xl font-bold text-white mb-4"   , style: { fontFamily: 'Georgia, serif' },}
+                    , userName ? `${userName}, seu` : 'Seu', " resultado está pronto!"
+                  )
+                  , _react2.default.createElement('p', { className: "text-blue-200 text-lg mb-4"  ,}, "Identificamos os nós da sua vida e preparamos uma mensagem especial de Nossa Senhora para você."
+
+                  )
+                  , _react2.default.createElement('div', { className: "bg-white bg-opacity-10 rounded-xl p-5 border border-amber-400 border-opacity-50 mb-8"       ,}
+                    , _react2.default.createElement('p', { className: "text-amber-200 italic" , style: { fontFamily: 'Georgia, serif' },}, "\"Minha filha, eu conheço cada lágrima que você já derramou. Confie em mim — seus nós serão desatados.\""
+
+                    )
+                    , _react2.default.createElement('p', { className: "text-amber-400 text-sm mt-2"  ,}, "— Mensagem para você"   )
+                  )
+                  , _react2.default.createElement(_framermotion.motion.button, { whileHover: { scale: 1.03 }, whileTap: { scale: 0.97 }, onClick: handleNext, className: "w-full py-5 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-xl font-bold rounded-xl shadow-xl transition-all"            ,}, "Ver Meu Resultado Completo"
+
+                  )
+                  , _react2.default.createElement('p', { className: "text-blue-400 text-sm mt-4"  ,}, "🔒 Seu resultado é privado e confidencial"      )
+                )
+              )
+            )
+          )
+        )
+      )
+
+      /* Footer Info */
+      , currentStep > 0 && currentStep < quizSteps.length - 1 && step.tipo === 'pergunta' && (
+        _react2.default.createElement('div', { className: "text-center pb-6 px-4"  ,}
+          , _react2.default.createElement('p', { className: "text-blue-400 text-xs" ,}, "🔒 Suas respostas são 100% privadas e confidenciais"       )
+        )
+      )
+    )
+  );
+} exports.default = QuizSalesPage;
+</script></head>
+  <body>
+  
+
+<div id="preview-app"></div></body></html>
