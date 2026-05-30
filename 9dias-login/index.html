@@ -1,0 +1,791 @@
+<!DOCTYPE html><html><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;"><meta http-equiv="x-dns-prefetch-control" content="off"><script src="https://puc.poecdn.net/authenticated_preview_page/standard.3ef2c256959faf5a756d.js"></script>
+    <meta charset="utf-8">
+    <title>Poe</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://puc.poecdn.net/authenticated_preview_page/disableWebRTC.9710cebe07429a9e8e06.js"></script><meta name="x-poe-allow-downloads" content="true"><meta name="x-poe-datastore-behavior" content="disabled"><script src="https://puc.poecdn.net/authenticated_preview_page/tw.50ec1b0612bf5b0c30a5.js"></script><script src="https://puc.poecdn.net/authenticated_preview_page/deps.faccd16000d314dc16d5.js"></script><script src="https://puc.poecdn.net/authenticated_preview_page/exports.b0f0f482cdeb5302b0b9.js"></script><script src="https://puc.poecdn.net/authenticated_preview_page/renderer.75c73ae6b4235f62945a.js"></script><script>Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _react = require('react'); var _react2 = _interopRequireDefault(_react);
+var _framermotion = require('framer-motion');
+var _lucidereact = require('lucide-react');
+
+const novenaData = [
+  {
+    dia: 1,
+    titulo: "Desatando o nó da falta de fé",
+    versiculo: "\"Tudo é possível ao que crê.\" — Marcos 9,23",
+    fraseMotivacional: "Hoje é o primeiro passo de uma transformação. Nossa Senhora caminha com você.",
+    meditacao: "Santíssima Mãe, Nossa Senhora Desatadora dos Nós, hoje vos peço que desateis o nó da falta de fé que muitas vezes paralisa minha vida. Confio em vosso amor maternal e na vossa poderosa intercessão junto a Deus. Ajudai-me a crer com todo o meu coração que nada é impossível para Deus.",
+    intencao: "Peça a graça de uma fé inabalável, que resista a todas as tempestades da vida.",
+    reflexao: "A fé é o primeiro passo para que todos os outros nós sejam desatados. Sem ela, permanecemos presos às nossas limitações humanas. Maria sempre confiou plenamente em Deus, mesmo nos momentos mais difíceis. Ela disse 'sim' sem saber o que viria, e esse sim mudou a história da humanidade."
+  },
+  {
+    dia: 2,
+    titulo: "Desatando o nó da ansiedade",
+    versiculo: "\"Não andeis ansiosos por coisa alguma.\" — Filipenses 4,6",
+    fraseMotivacional: "Entregue suas preocupações. Quem confia em Deus descansa em paz.",
+    meditacao: "Mãe querida, Nossa Senhora Desatadora dos Nós, hoje vos entrego toda a minha ansiedade e preocupação. Sei que muitas vezes me aflijo com o futuro e esqueço de confiar na Providência Divina. Desatai este nó que me tira a paz e me impede de viver plenamente o presente.",
+    intencao: "Peça a graça da paz interior e da confiança plena nos planos de Deus para sua vida.",
+    reflexao: "A ansiedade é um nó que nos prende ao medo do futuro. Maria nos ensina a viver um dia de cada vez, confiando que Deus cuida de tudo com amor infinito. Ela guardava tudo em seu coração, meditando com serenidade, sem desespero."
+  },
+  {
+    dia: 3,
+    titulo: "Desatando o nó da impaciência",
+    versiculo: "\"Espera no Senhor, sê forte e corajoso.\" — Salmo 27,14",
+    fraseMotivacional: "O tempo de Deus é perfeito. Cada espera tem um propósito divino.",
+    meditacao: "Virgem Maria, Desatadora dos Nós, hoje vos peço que desateis o nó da impaciência que tantas vezes me domina. Ensina-me a esperar com serenidade os tempos de Deus, sabendo que Ele age no momento certo e da maneira perfeita.",
+    intencao: "Peça a graça da paciência e da capacidade de esperar nos tempos de Deus.",
+    reflexao: "A impaciência nos faz querer controlar tudo. Maria esperou pacientemente, confiando sempre. O tempo de Deus é perfeito, mesmo quando não compreendemos. Ela esperou 33 anos ao lado de Jesus, vivendo cada momento com entrega total."
+  },
+  {
+    dia: 4,
+    titulo: "Desatando o nó do ressentimento",
+    versiculo: "\"Perdoai e sereis perdoados.\" — Lucas 6,37",
+    fraseMotivacional: "O perdão liberta primeiro quem perdoa. Solte esse peso hoje.",
+    meditacao: "Nossa Senhora Desatadora dos Nós, hoje coloco em vossas mãos o nó do ressentimento e da mágoa que carrego no coração. Ajudai-me a perdoar aqueles que me feriram, assim como vosso Filho Jesus perdoou na cruz. Libertai-me deste peso que impede meu coração de amar plenamente.",
+    intencao: "Peça a graça do perdão verdadeiro e da libertação de toda mágoa e rancor.",
+    reflexao: "O ressentimento é um dos nós mais difíceis de desatar. Ele nos prende ao passado e envenena nossa alma. Maria, aos pés da cruz, nos ensina que o perdão é o caminho da libertação. Ela viu seu Filho ser injustiçado e ainda assim não guardou ódio."
+  },
+  {
+    dia: 5,
+    titulo: "Desatando o nó dos problemas familiares",
+    versiculo: "\"Onde dois ou três estiverem reunidos em meu nome, ali estarei.\" — Mateus 18,20",
+    fraseMotivacional: "Sua família está nas mãos de Deus. Confie e ore por cada um.",
+    meditacao: "Mãe Santíssima, Desatadora dos Nós, hoje vos entrego todos os nós que existem em minha família. As brigas, desentendimentos, distâncias e feridas que nos separam. Cobri minha família com vosso manto sagrado e restaurai a união e o amor entre nós.",
+    intencao: "Peça a graça da reconciliação familiar e da restauração dos laços de amor.",
+    reflexao: "A família é a primeira igreja doméstica. Maria viveu em família e conhece as dificuldades das relações humanas. Ela cuidou de Jesus e José com amor incondicional, mesmo nas dificuldades. Entregue a ela cada membro da sua família."
+  },
+  {
+    dia: 6,
+    titulo: "Desatando o nó das doenças e dores",
+    versiculo: "\"Eu sou o Senhor que te cura.\" — Êxodo 15,26",
+    fraseMotivacional: "Deus conhece cada dor sua. Ele é o médico dos médicos.",
+    meditacao: "Virgem Santíssima, Desatadora dos Nós, hoje vos peço que desateis o nó das doenças e dores que afligem meu corpo e minha alma. Sei que vosso Filho Jesus é o médico dos médicos. Intercedei por minha saúde e concedei-me a graça da cura, se for da vontade de Deus.",
+    intencao: "Peça a graça da saúde do corpo e da alma, e a força para enfrentar as enfermidades.",
+    reflexao: "As doenças podem ser nós que nos paralisam. Maria, que sofreu com seu Filho, compreende nossa dor. Ela esteve ao lado de Jesus em cada momento de sofrimento. Entreguemos nossas enfermidades com fé e confiança na cura divina."
+  },
+  {
+    dia: 7,
+    titulo: "Desatando o nó dos problemas financeiros",
+    versiculo: "\"O meu Deus suprirá todas as vossas necessidades.\" — Filipenses 4,19",
+    fraseMotivacional: "Deus é o dono de toda riqueza. Ele provê para seus filhos amados.",
+    meditacao: "Nossa Senhora Desatadora dos Nós, hoje vos entrego o nó das dificuldades financeiras que me afligem. Sei que Deus é o dono de tudo e que nada lhe falta. Abri os caminhos da prosperidade em minha vida, para que eu possa viver com dignidade e ajudar os que precisam.",
+    intencao: "Peça a graça da provisão divina e da sabedoria para administrar seus bens.",
+    reflexao: "Os problemas financeiros podem ser nós sufocantes. Maria viveu na simplicidade e na confiança total em Deus. Mesmo sem riquezas materiais, ela era plena. Deus conhece nossas necessidades e provê para seus filhos no momento certo."
+  },
+  {
+    dia: 8,
+    titulo: "Desatando o nó da tristeza e solidão",
+    versiculo: "\"Não te abandonarei nem te desampararei.\" — Josué 1,5",
+    fraseMotivacional: "Você nunca está sozinha. O céu inteiro cuida de você.",
+    meditacao: "Mãe querida, Desatadora dos Nós, hoje vos entrego o nó da tristeza e da solidão que muitas vezes pesa em meu coração. Enchei minha vida com a alegria do Espírito Santo e fazei-me sentir a presença amorosa de Deus em todos os momentos, especialmente nos mais difíceis.",
+    intencao: "Peça a graça da alegria verdadeira e da certeza de que nunca estamos sozinhos.",
+    reflexao: "A tristeza e a solidão são nós que nos isolam do amor. Maria esteve sozinha aos pés da cruz, mas nunca perdeu a esperança. Ela é nossa companheira nos momentos mais escuros. Com ela, jamais estaremos verdadeiramente sós."
+  },
+  {
+    dia: 9,
+    titulo: "Desatando todos os nós — Consagração Final",
+    versiculo: "\"Eis aqui a serva do Senhor, faça-se em mim segundo a vossa palavra.\" — Lucas 1,38",
+    fraseMotivacional: "Hoje você se consagra. Todos os nós estão nas mãos da Mãe.",
+    meditacao: "Nossa Senhora Desatadora dos Nós, neste último dia da novena, entrego em vossas mãos benditas TODOS os nós da minha vida – os que conheço e os que desconheço. Consagro-me inteiramente ao vosso Imaculado Coração. Desatai cada nó com vossas mãos de Mãe e conduzi-me sempre pelo caminho do vosso Filho Jesus Cristo.",
+    intencao: "Peça a graça da libertação total e da consagração plena a Nossa Senhora.",
+    reflexao: "Neste último dia, fazemos uma entrega total. Maria desata todos os nossos nós com amor maternal infinito. Confie que ela continuará intercedendo por você após esta novena. Viva em gratidão, fé e amor. Você completou esta jornada sagrada — agora carregue essa graça para toda a sua vida."
+  }
+];
+
+const oracaoInicial = `Em nome do Pai, do Filho e do Espírito Santo. Amém.
+
+Ato de Contrição:
+Meu Deus, eu me arrependo de todo coração de todos os meus pecados e os detesto, porque ao pecar, não só mereço as penas que justamente me foram reservadas, mas principalmente porque ofendi a Vós, sumo Bem e digno de ser amado sobre todas as coisas. Proponho firmemente, com o auxílio da vossa graça, não mais pecar e fugir das ocasiões próximas de pecado. Amém.`;
+
+const oracaoFinal = `Virgem Maria, Mãe do belo Amor, Mãe que nunca abandonou um filho que clama por socorro, Mãe cujas mãos não cessam de servir aos seus filhos amados, porque são movidas pelo amor divino e pela infinita misericórdia que sai do vosso coração, volvei para mim vosso olhar compassivo.
+
+Vede o monte de "nós" que existem na minha vida. Vós conheceis o meu desespero e a minha dor. Sabeis o quanto esses nós me paralisam. Maria, Mãe encarregada por Deus de desatar os "nós" da vida dos vossos filhos, deposito a fita da minha vida nas vossas mãos.
+
+Ninguém, nem mesmo o Maligno, pode tirá-la de vosso amparo. Em vossas mãos não existe nenhum "nó" que não seja desatado.
+
+Mãe poderosa, pelo vosso amor e misericórdia, desatai os "nós" que existem na minha vida.
+
+Eu vos agradeço, Mãe querida, pela graça que vou receber. Amém.`;
+
+const oracoesFechamento = `Reze com devoção:
+
+3 Ave-Marias:
+Ave Maria, cheia de graça, o Senhor é convosco. Bendita sois Vós entre as mulheres, e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós pecadores, agora e na hora de nossa morte. Amém.
+
+1 Pai Nosso:
+Pai Nosso que estais nos Céus, santificado seja o vosso Nome, venha a nós o vosso Reino, seja feita a vossa vontade assim na terra como no céu. O pão nosso de cada dia nos dai hoje, perdoai-nos as nossas ofensas assim como nós perdoamos a quem nos tenha ofendido, e não nos deixeis cair em tentação, mas livrai-nos do Mal. Amém.
+
+1 Glória ao Pai:
+Glória ao Pai, ao Filho e ao Espírito Santo. Como era no princípio, agora e sempre, por todos os séculos dos séculos. Amém.`;
+
+const faqData = [
+  { pergunta: "Posso rezar a novena mais de uma vez?", resposta: "Sim! Você pode rezar quantas vezes sentir necessidade. Muitas pessoas rezam continuamente, especialmente quando têm intenções importantes." },
+  { pergunta: "E se eu esquecer um dia?", resposta: "O ideal é não interromper. Se esquecer um dia, recomece do primeiro dia com fé renovada. A constância é importante nesta devoção." },
+  { pergunta: "Qual o melhor horário para rezar?", resposta: "Recomendamos entre 6h e 9h da manhã ou entre 18h e 21h. O importante é escolher um horário fixo e manter todos os dias." },
+  { pergunta: "Posso rezar por outra pessoa?", resposta: "Sim! Você pode oferecer a novena inteira ou dias específicos por outras pessoas. Nossa Senhora acolhe todas as intenções." },
+  { pergunta: "Preciso estar em uma igreja?", resposta: "Não é necessário. Você pode rezar em casa, em um cantinho tranquilo. Se possível, tenha uma imagem de Nossa Senhora, uma vela e seu terço." },
+  { pergunta: "Quanto tempo dura cada dia de oração?", resposta: "Aproximadamente 15 a 20 minutos. Reserve esse tempo com calma, sem pressa. É seu momento com Nossa Senhora." }
+];
+
+// SVG illustrations for Nossa Senhora
+const NossaSenhoraIllustration = ({ className = "" }) => (
+  _react2.default.createElement('svg', { viewBox: "0 0 200 300"   , className: className, xmlns: "http://www.w3.org/2000/svg",}
+    , _react2.default.createElement('defs', null
+      , _react2.default.createElement('radialGradient', { id: "halo", cx: "50%", cy: "30%", r: "50%",}
+        , _react2.default.createElement('stop', { offset: "0%", stopColor: "#fbbf24", stopOpacity: "0.8",})
+        , _react2.default.createElement('stop', { offset: "100%", stopColor: "#fbbf24", stopOpacity: "0",})
+      )
+      , _react2.default.createElement('linearGradient', { id: "mantle", x1: "0%", y1: "0%", x2: "0%", y2: "100%",}
+        , _react2.default.createElement('stop', { offset: "0%", stopColor: "#1e3a5f",})
+        , _react2.default.createElement('stop', { offset: "100%", stopColor: "#1e40af",})
+      )
+      , _react2.default.createElement('linearGradient', { id: "dress", x1: "0%", y1: "0%", x2: "0%", y2: "100%",}
+        , _react2.default.createElement('stop', { offset: "0%", stopColor: "#ffffff",})
+        , _react2.default.createElement('stop', { offset: "100%", stopColor: "#e8e0d4",})
+      )
+    )
+    , _react2.default.createElement('ellipse', { cx: "100", cy: "80", rx: "60", ry: "60", fill: "url(#halo)",})
+    , _react2.default.createElement('circle', { cx: "100", cy: "70", r: "8", fill: "none", stroke: "#fbbf24", strokeWidth: "1.5", opacity: "0.6",})
+    , _react2.default.createElement('circle', { cx: "100", cy: "70", r: "12", fill: "none", stroke: "#fbbf24", strokeWidth: "1", opacity: "0.4",})
+    , _react2.default.createElement('circle', { cx: "100", cy: "70", r: "16", fill: "none", stroke: "#fbbf24", strokeWidth: "0.5", opacity: "0.3",})
+    , _react2.default.createElement('path', { d: "M100 55 Q100 50 100 55"     , fill: "none",})
+    , _react2.default.createElement('ellipse', { cx: "100", cy: "68", rx: "10", ry: "12", fill: "#fde8d0",})
+    , _react2.default.createElement('ellipse', { cx: "97", cy: "66", rx: "1.5", ry: "1.5", fill: "#4a3520",})
+    , _react2.default.createElement('ellipse', { cx: "103", cy: "66", rx: "1.5", ry: "1.5", fill: "#4a3520",})
+    , _react2.default.createElement('path', { d: "M97 72 Q100 74 103 72"     , fill: "none", stroke: "#c4756e", strokeWidth: "0.8",})
+    , _react2.default.createElement('path', { d: "M85 60 Q100 52 115 60 L118 65 Q100 58 82 65 Z"            , fill: "#1e3a5f",})
+    , _react2.default.createElement('path', { d: "M70 80 Q65 120 68 200 Q80 260 100 280 Q120 260 132 200 Q135 120 130 80 Q115 70 100 68 Q85 70 70 80 Z"                          , fill: "url(#mantle)",})
+    , _react2.default.createElement('path', { d: "M80 90 Q78 140 82 200 Q90 240 100 255 Q110 240 118 200 Q122 140 120 90 Q110 82 100 80 Q90 82 80 90 Z"                          , fill: "url(#dress)",})
+    , _react2.default.createElement('path', { d: "M88 130 Q92 125 96 128 L96 145 Q92 148 88 145 Z"            , fill: "#fde8d0",})
+    , _react2.default.createElement('path', { d: "M104 130 Q108 125 112 128 L112 145 Q108 148 104 145 Z"            , fill: "#fde8d0",})
+    , _react2.default.createElement('path', { d: "M92 138 Q100 140 108 138"     , fill: "none", stroke: "#d4a574", strokeWidth: "0.8",})
+    , _react2.default.createElement('ellipse', { cx: "100", cy: "140", rx: "4", ry: "3", fill: "none", stroke: "#fbbf24", strokeWidth: "0.8", opacity: "0.6",})
+    , [0,1,2,3,4,5,6,7,8,9,10,11].map(i => (
+      _react2.default.createElement('circle', { key: i, cx: 100 + 22 * Math.cos(i * Math.PI / 6), cy: 70 + 22 * Math.sin(i * Math.PI / 6), r: "1.2", fill: "#fbbf24", opacity: "0.7",})
+    ))
+    , _react2.default.createElement('path', { d: "M68 270 Q100 290 132 270 Q130 280 100 295 Q70 280 68 270 Z"              , fill: "#1e3a5f", opacity: "0.5",})
+  )
+);
+
+const NossaSenhoraSmall = ({ className = "" }) => (
+  _react2.default.createElement('svg', { viewBox: "0 0 100 100"   , className: className, xmlns: "http://www.w3.org/2000/svg",}
+    , _react2.default.createElement('defs', null
+      , _react2.default.createElement('radialGradient', { id: "haloSmall", cx: "50%", cy: "40%", r: "50%",}
+        , _react2.default.createElement('stop', { offset: "0%", stopColor: "#fbbf24", stopOpacity: "0.6",})
+        , _react2.default.createElement('stop', { offset: "100%", stopColor: "#fbbf24", stopOpacity: "0",})
+      )
+    )
+    , _react2.default.createElement('circle', { cx: "50", cy: "50", r: "45", fill: "url(#haloSmall)",})
+    , _react2.default.createElement('ellipse', { cx: "50", cy: "42", rx: "8", ry: "10", fill: "#fde8d0",})
+    , _react2.default.createElement('path', { d: "M38 36 Q50 30 62 36 L64 40 Q50 34 36 40 Z"            , fill: "#1e3a5f",})
+    , _react2.default.createElement('path', { d: "M35 48 Q33 65 36 85 Q42 95 50 98 Q58 95 64 85 Q67 65 65 48 Q58 42 50 40 Q42 42 35 48 Z"                          , fill: "#1e3a5f",})
+    , _react2.default.createElement('path', { d: "M40 52 Q38 65 40 82 Q45 90 50 93 Q55 90 60 82 Q62 65 60 52 Q55 47 50 46 Q45 47 40 52 Z"                          , fill: "#f5f0e8",})
+    , _react2.default.createElement('ellipse', { cx: "48", cy: "41", rx: "1.2", ry: "1.2", fill: "#4a3520",})
+    , _react2.default.createElement('ellipse', { cx: "52", cy: "41", rx: "1.2", ry: "1.2", fill: "#4a3520",})
+    , _react2.default.createElement('path', { d: "M48 45 Q50 46 52 45"     , fill: "none", stroke: "#c4756e", strokeWidth: "0.6",})
+    , [0,1,2,3,4,5,6,7,8,9,10,11].map(i => (
+      _react2.default.createElement('circle', { key: i, cx: 50 + 17 * Math.cos(i * Math.PI / 6), cy: 42 + 17 * Math.sin(i * Math.PI / 6), r: "1", fill: "#fbbf24", opacity: "0.6",})
+    ))
+  )
+);
+
+const OrnamentalDivider = ({ dark = false }) => (
+  _react2.default.createElement('div', { className: "flex items-center justify-center my-6"   ,}
+    , _react2.default.createElement('div', { className: `h-px w-12 ${dark ? 'bg-yellow-400' : 'bg-amber-300'} opacity-60`,})
+    , _react2.default.createElement('svg', { viewBox: "0 0 40 20"   , className: "w-10 h-5 mx-2"  , xmlns: "http://www.w3.org/2000/svg",}
+      , _react2.default.createElement('path', { d: "M5 10 Q10 2 20 10 Q30 18 35 10"         , fill: "none", stroke: dark ? '#fbbf24' : '#d97706', strokeWidth: "1", opacity: "0.7",})
+      , _react2.default.createElement('circle', { cx: "20", cy: "10", r: "2", fill: dark ? '#fbbf24' : '#d97706', opacity: "0.7",})
+      , _react2.default.createElement('path', { d: "M5 10 Q10 18 20 10 Q30 2 35 10"         , fill: "none", stroke: dark ? '#fbbf24' : '#d97706', strokeWidth: "1", opacity: "0.7",})
+    )
+    , _react2.default.createElement('div', { className: `h-px w-12 ${dark ? 'bg-yellow-400' : 'bg-amber-300'} opacity-60`,})
+  )
+);
+
+const PrayerTimer = () => {
+  const [seconds, setSeconds] = _react.useState.call(void 0, 900);
+  const [isRunning, setIsRunning] = _react.useState.call(void 0, false);
+  const [initialTime] = _react.useState.call(void 0, 900);
+
+  _react.useEffect.call(void 0, () => {
+    let interval = null;
+    if (isRunning && seconds > 0) {
+      interval = setInterval(() => setSeconds(s => s - 1), 1000);
+    } else if (seconds === 0) {
+      setIsRunning(false);
+    }
+    return () => clearInterval(interval);
+  }, [isRunning, seconds]);
+
+  const formatTime = (s) => {
+    const mins = Math.floor(s / 60);
+    const secs = s % 60;
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  };
+
+  const progress = ((initialTime - seconds) / initialTime) * 100;
+
+  return (
+    _react2.default.createElement('div', { className: "bg-gradient-to-b from-amber-50 to-white rounded-2xl p-6 border border-amber-200 text-center"       ,}
+      , _react2.default.createElement('h4', { className: "text-lg font-semibold text-blue-900 mb-4"   ,}, "Cronômetro de Oração"  )
+      , _react2.default.createElement('div', { className: "relative w-32 h-32 mx-auto mb-4"    ,}
+        , _react2.default.createElement('svg', { className: "w-full h-full transform -rotate-90"   ,}
+          , _react2.default.createElement('circle', { cx: "64", cy: "64", r: "56", fill: "none", stroke: "#e5e7eb", strokeWidth: "6",})
+          , _react2.default.createElement('circle', { cx: "64", cy: "64", r: "56", fill: "none", stroke: "#d97706", strokeWidth: "6", strokeLinecap: "round", strokeDasharray: `${2 * Math.PI * 56}`, strokeDashoffset: `${2 * Math.PI * 56 * (1 - progress / 100)}`, className: "transition-all duration-1000" ,})
+        )
+        , _react2.default.createElement('div', { className: "absolute inset-0 flex items-center justify-center"    ,}
+          , _react2.default.createElement('span', { className: "text-2xl font-mono text-blue-900"  ,}, formatTime(seconds))
+        )
+      )
+      , _react2.default.createElement('div', { className: "flex justify-center gap-3"  ,}
+        , _react2.default.createElement('button', { onClick: () => setIsRunning(!isRunning), className: "px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors flex items-center gap-1"         ,}
+          , isRunning ? _react2.default.createElement(_lucidereact.Pause, { className: "w-4 h-4" ,}) : _react2.default.createElement(_lucidereact.Play, { className: "w-4 h-4" ,})
+          , isRunning ? 'Pausar' : 'Iniciar'
+        )
+        , _react2.default.createElement('button', { onClick: () => { setSeconds(900); setIsRunning(false); }, className: "px-4 py-2 bg-blue-100 text-blue-800 rounded-lg hover:bg-blue-200 transition-colors flex items-center gap-1"         ,}
+          , _react2.default.createElement(_lucidereact.RotateCcw, { className: "w-4 h-4" ,}), " Reiniciar"
+        )
+      )
+      , _react2.default.createElement('p', { className: "text-amber-700 text-sm mt-3"  ,}, "15 minutos de oração contemplativa"    )
+    )
+  );
+};
+
+ function App() {
+  const [isLoggedIn, setIsLoggedIn] = _react.useState.call(void 0, false);
+  const [email, setEmail] = _react.useState.call(void 0, '');
+  const [userName, setUserName] = _react.useState.call(void 0, '');
+  const [showWelcome, setShowWelcome] = _react.useState.call(void 0, false);
+  const [selectedDay, setSelectedDay] = _react.useState.call(void 0, null);
+  const [currentTab, setCurrentTab] = _react.useState.call(void 0, 'novena');
+  const [completedDays, setCompletedDays] = _react.useState.call(void 0, {});
+  const [diaryEntries, setDiaryEntries] = _react.useState.call(void 0, {});
+  const [fontSize, setFontSize] = _react.useState.call(void 0, 18);
+  const [nightMode, setNightMode] = _react.useState.call(void 0, false);
+  const [sidebarOpen, setSidebarOpen] = _react.useState.call(void 0, false);
+  const [showCertificate, setShowCertificate] = _react.useState.call(void 0, false);
+  const [expandedFaq, setExpandedFaq] = _react.useState.call(void 0, null);
+  const [firstVisit, setFirstVisit] = _react.useState.call(void 0, true);
+
+  const allCompleted = Object.keys(completedDays).length === 9;
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (email.includes('@')) {
+      const name = email.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+      setUserName(name);
+      setIsLoggedIn(true);
+      setShowWelcome(true);
+    }
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setEmail('');
+    setSelectedDay(null);
+    setCurrentTab('novena');
+    setSidebarOpen(false);
+  };
+
+  const toggleComplete = (day) => {
+    setCompletedDays(prev => {
+      const updated = { ...prev };
+      if (updated[day]) delete updated[day];
+      else updated[day] = true;
+      return updated;
+    });
+  };
+
+  const bgClass = nightMode ? 'bg-gray-900' : 'bg-white';
+  const textClass = nightMode ? 'text-gray-100' : 'text-blue-900';
+  const textSecondary = nightMode ? 'text-gray-300' : 'text-blue-700';
+  const cardBg = nightMode ? 'bg-gray-800 border-gray-700' : 'bg-amber-50 border-amber-100';
+  const cardBg2 = nightMode ? 'bg-gray-800 border-gray-700' : 'bg-blue-50 border-blue-100';
+
+  // LOGIN SCREEN
+  if (!isLoggedIn) {
+    return (
+      _react2.default.createElement('div', { className: "min-h-screen bg-gradient-to-b from-blue-950 via-blue-900 to-blue-800 flex flex-col items-center justify-center p-4"         ,}
+        , _react2.default.createElement(_framermotion.motion.div, { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8 }, className: "w-full max-w-md" ,}
+          , _react2.default.createElement('div', { className: "text-center mb-10" ,}
+            , _react2.default.createElement(_framermotion.motion.div, { initial: { scale: 0.8, opacity: 0 }, animate: { scale: 1, opacity: 1 }, transition: { delay: 0.3, duration: 0.6 },}
+              , _react2.default.createElement(NossaSenhoraIllustration, { className: "w-36 h-52 mx-auto mb-4"   ,} )
+            )
+            , _react2.default.createElement(_framermotion.motion.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { delay: 0.6 },}
+              , _react2.default.createElement('h1', { className: "text-3xl font-light text-white mb-1"   , style: { fontFamily: 'Georgia, serif' },}, "9 Dias com"  )
+              , _react2.default.createElement('h2', { className: "text-2xl font-semibold text-yellow-300"  , style: { fontFamily: 'Georgia, serif' },}, "Nossa Senhora" )
+              , _react2.default.createElement('p', { className: "text-amber-200 mt-1 text-lg"  ,}, "Desatadora dos Nós"  )
+              , _react2.default.createElement(OrnamentalDivider, { dark: true,} )
+            )
+          )
+
+          , _react2.default.createElement(_framermotion.motion.form, { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { delay: 0.9 }, onSubmit: handleLogin, className: "space-y-5 bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 border border-white border-opacity-20"        ,}
+            , _react2.default.createElement('div', null
+              , _react2.default.createElement('label', { className: "block text-amber-100 text-lg mb-2"   ,}, "Seu e-mail de compra"   )
+              , _react2.default.createElement('div', { className: "relative",}
+                , _react2.default.createElement(_lucidereact.Mail, { className: "absolute left-4 top-1/2 transform -translate-y-1/2 text-amber-400 w-5 h-5"       ,} )
+                , _react2.default.createElement('input', { type: "email", value: email, onChange: (e) => setEmail(e.target.value), placeholder: "Digite seu e-mail..."  , className: "w-full pl-12 pr-4 py-4 text-lg border-2 border-amber-200 border-opacity-30 rounded-xl focus:outline-none focus:border-yellow-400 transition-colors bg-white bg-opacity-90 text-blue-900"              , required: true,} )
+              )
+            )
+            , _react2.default.createElement('button', { type: "submit", className: "w-full py-4 bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-blue-900 text-lg font-semibold rounded-xl transition-all shadow-lg hover:shadow-xl"             ,}, "Acessar Minha Novena"
+
+            )
+          )
+
+          , _react2.default.createElement(_framermotion.motion.p, { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { delay: 1.2 }, className: "text-center text-blue-200 mt-6 text-base"   ,}, "Use o e-mail utilizado na compra do produto"
+
+          )
+        )
+      )
+    );
+  }
+
+  // WELCOME LETTER
+  if (showWelcome && firstVisit) {
+    return (
+      _react2.default.createElement('div', { className: "min-h-screen bg-gradient-to-b from-amber-50 to-white flex flex-col items-center justify-center p-4"        ,}
+        , _react2.default.createElement(_framermotion.motion.div, { initial: { opacity: 0, scale: 0.95 }, animate: { opacity: 1, scale: 1 }, transition: { duration: 0.8 }, className: "w-full max-w-lg bg-white rounded-2xl shadow-xl p-8 border border-amber-200"       ,}
+          , _react2.default.createElement('div', { className: "text-center mb-6" ,}
+            , _react2.default.createElement(NossaSenhoraSmall, { className: "w-20 h-20 mx-auto mb-4"   ,} )
+            , _react2.default.createElement('h2', { className: "text-2xl font-semibold text-blue-900"  , style: { fontFamily: 'Georgia, serif' },}, "Uma Carta para Você"   )
+            , _react2.default.createElement(OrnamentalDivider, null )
+          )
+          , _react2.default.createElement('div', { className: "text-blue-800 text-lg leading-relaxed space-y-4"   , style: { fontFamily: 'Georgia, serif' },}
+            , _react2.default.createElement('p', null, "Querida " , _react2.default.createElement('strong', null, userName), ",")
+            , _react2.default.createElement('p', null, "Que alegria ter você aqui! Saiba que não foi por acaso que você chegou até esta novena. Nossa Senhora Desatadora dos Nós já está intercedendo por você."                          )
+            , _react2.default.createElement('p', null, "Nos próximos 9 dias, você terá um encontro diário com a Mãe de Deus. Ela conhece cada nó da sua vida — cada dor, cada angústia, cada preocupação — e quer desatá-los com suas mãos de Mãe."                                    )
+            , _react2.default.createElement('p', null, "Reze com fé, com o coração aberto. Confie que, ao final destes 9 dias, sua vida será transformada pela graça divina."                    )
+            , _react2.default.createElement('p', { className: "text-amber-700 italic" ,}, "Com amor e bênçãos,"   , _react2.default.createElement('br', null), "Sua Novena com Nossa Senhora ✙"     )
+          )
+          , _react2.default.createElement('button', { onClick: () => { setShowWelcome(false); setFirstVisit(false); }, className: "w-full mt-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-400 text-blue-900 text-lg font-semibold rounded-xl hover:from-amber-600 hover:to-yellow-500 transition-all"            ,}, "Começar Minha Jornada"
+
+          )
+        )
+      )
+    );
+  }
+
+  // CERTIFICATE
+  if (showCertificate) {
+    return (
+      _react2.default.createElement('div', { className: `min-h-screen ${nightMode ? 'bg-gray-900' : 'bg-gradient-to-b from-amber-50 to-white'} flex flex-col items-center justify-center p-4`,}
+        , _react2.default.createElement(_framermotion.motion.div, { initial: { opacity: 0, scale: 0.9 }, animate: { opacity: 1, scale: 1 }, transition: { duration: 0.6 }, className: "w-full max-w-lg bg-white rounded-2xl shadow-2xl p-8 border-4 border-amber-400"       ,}
+          , _react2.default.createElement('div', { className: "text-center",}
+            , _react2.default.createElement(_lucidereact.Award, { className: "w-16 h-16 text-amber-500 mx-auto mb-4"    ,} )
+            , _react2.default.createElement('h2', { className: "text-2xl font-bold text-blue-900 mb-2"   , style: { fontFamily: 'Georgia, serif' },}, "Certificado de Conclusão"  )
+            , _react2.default.createElement(OrnamentalDivider, null )
+            , _react2.default.createElement(NossaSenhoraSmall, { className: "w-24 h-24 mx-auto my-4"   ,} )
+            , _react2.default.createElement('p', { className: "text-blue-800 text-lg mb-2"  ,}, "Certificamos que" )
+            , _react2.default.createElement('p', { className: "text-2xl font-bold text-amber-700 mb-2"   ,}, userName)
+            , _react2.default.createElement('p', { className: "text-blue-800 text-lg mb-4"  ,}, "completou com fé e devoção a"     )
+            , _react2.default.createElement('p', { className: "text-xl font-semibold text-blue-900 mb-1"   , style: { fontFamily: 'Georgia, serif' },}, "Novena de 9 Dias"   )
+            , _react2.default.createElement('p', { className: "text-lg text-blue-700 mb-6"  ,}, "com Nossa Senhora Desatadora dos Nós"     )
+            , _react2.default.createElement(OrnamentalDivider, null )
+            , _react2.default.createElement('p', { className: "text-amber-700 italic mt-4"  , style: { fontFamily: 'Georgia, serif' },}, "\"Que Nossa Senhora continue desatando os nós da sua vida e guiando seus passos no caminho do amor.\""                 )
+            , _react2.default.createElement('p', { className: "text-blue-400 text-sm mt-6"  ,}, "✙ Com as bênçãos de Nossa Senhora ✙"       )
+          )
+          , _react2.default.createElement('button', { onClick: () => setShowCertificate(false), className: "w-full mt-6 py-3 bg-blue-900 text-white rounded-xl hover:bg-blue-800 transition-colors text-lg"        ,}, "Voltar à Área de Membros"
+
+          )
+        )
+      )
+    );
+  }
+
+  // DAY DETAIL VIEW
+  if (selectedDay !== null) {
+    const dia = novenaData[selectedDay];
+    return (
+      _react2.default.createElement('div', { className: `min-h-screen ${bgClass} transition-colors duration-300`,}
+        , _react2.default.createElement('header', { className: `${nightMode ? 'bg-gray-800' : 'bg-blue-900'} text-white p-4 sticky top-0 z-10`,}
+          , _react2.default.createElement('div', { className: "max-w-3xl mx-auto flex items-center justify-between"    ,}
+            , _react2.default.createElement('button', { onClick: () => setSelectedDay(null), className: "flex items-center text-yellow-300 hover:text-yellow-200 text-lg"    ,}
+              , _react2.default.createElement(_lucidereact.ChevronLeft, { className: "w-5 h-5 mr-1"  ,} ), " Voltar"
+            )
+            , _react2.default.createElement('div', { className: "flex items-center gap-3"  ,}
+              , _react2.default.createElement('button', { onClick: () => setFontSize(f => Math.max(14, f - 2)), className: "p-1 text-yellow-300 hover:text-yellow-200"  ,}, _react2.default.createElement(_lucidereact.Minus, { className: "w-4 h-4" ,}))
+              , _react2.default.createElement('span', { className: "text-sm text-blue-200" ,}, "Aa")
+              , _react2.default.createElement('button', { onClick: () => setFontSize(f => Math.min(24, f + 2)), className: "p-1 text-yellow-300 hover:text-yellow-200"  ,}, _react2.default.createElement(_lucidereact.Plus, { className: "w-4 h-4" ,}))
+              , _react2.default.createElement('button', { onClick: () => setNightMode(!nightMode), className: "p-1 text-yellow-300 hover:text-yellow-200 ml-2"   ,}
+                , nightMode ? _react2.default.createElement(_lucidereact.Sun, { className: "w-4 h-4" ,}) : _react2.default.createElement(_lucidereact.Moon, { className: "w-4 h-4" ,})
+              )
+            )
+          )
+        )
+
+        , _react2.default.createElement(_framermotion.AnimatePresence, { mode: "wait",}
+          , _react2.default.createElement(_framermotion.motion.main, { key: selectedDay, initial: { opacity: 0, x: 20 }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0, x: -20 }, transition: { duration: 0.3 }, className: "max-w-3xl mx-auto p-6"  , style: { fontSize: `${fontSize}px` },}
+            , _react2.default.createElement('div', { className: "mb-6 text-center" ,}
+              , _react2.default.createElement('span', { className: `text-sm uppercase tracking-wider ${nightMode ? 'text-amber-400' : 'text-amber-600'}`,}, "Dia " , dia.dia, " de 9"  )
+              , _react2.default.createElement('h1', { className: `text-2xl font-semibold ${textClass} mt-2`, style: { fontFamily: 'Georgia, serif' },}, dia.titulo)
+              , _react2.default.createElement(OrnamentalDivider, { dark: nightMode,} )
+            )
+
+            , _react2.default.createElement('div', { className: `${nightMode ? 'bg-amber-900 bg-opacity-30 border-amber-700' : 'bg-gradient-to-r from-amber-50 to-yellow-50 border-amber-200'} rounded-xl p-4 mb-6 border text-center`,}
+              , _react2.default.createElement('p', { className: `italic ${nightMode ? 'text-amber-200' : 'text-amber-800'}`, style: { fontFamily: 'Georgia, serif' },}, dia.fraseMotivacional)
+            )
+
+            , _react2.default.createElement('div', { className: `${nightMode ? 'bg-blue-900 bg-opacity-30 border-blue-700' : 'bg-blue-50 border-blue-100'} rounded-xl p-4 mb-6 border text-center`,}
+              , _react2.default.createElement('p', { className: `italic font-medium ${nightMode ? 'text-blue-200' : 'text-blue-800'}`, style: { fontFamily: 'Georgia, serif' },}, dia.versiculo)
+            )
+
+            , _react2.default.createElement('div', { className: "flex justify-center mb-6"  ,}
+              , _react2.default.createElement(NossaSenhoraSmall, { className: "w-16 h-16 opacity-60"  ,} )
+            )
+
+            , _react2.default.createElement('div', { className: "space-y-6",}
+              , _react2.default.createElement('section', { className: `${cardBg2} rounded-xl p-6 border`,}
+                , _react2.default.createElement('h3', { className: `font-semibold ${textClass} mb-3 flex items-center`,}
+                  , _react2.default.createElement(_lucidereact.Clock, { className: "w-5 h-5 mr-2 text-amber-500"   ,} ), " Oração Inicial"
+                )
+                , _react2.default.createElement('p', { className: `${textSecondary} leading-relaxed whitespace-pre-line`, style: { fontFamily: 'Georgia, serif' },}, oracaoInicial)
+              )
+
+              , _react2.default.createElement('section', { className: `${cardBg} rounded-xl p-6 border`,}
+                , _react2.default.createElement('h3', { className: `font-semibold ${textClass} mb-3 flex items-center`,}
+                  , _react2.default.createElement(_lucidereact.Heart, { className: "w-5 h-5 mr-2 text-amber-500"   ,} ), " Meditação do Dia"
+                )
+                , _react2.default.createElement('p', { className: `${textSecondary} leading-relaxed italic`, style: { fontFamily: 'Georgia, serif' },}, dia.meditacao)
+              )
+
+              , _react2.default.createElement('section', { className: `${nightMode ? 'bg-amber-900 bg-opacity-20 border-amber-600' : 'bg-white border-amber-300'} rounded-xl p-6 border-2`,}
+                , _react2.default.createElement('h3', { className: `font-semibold ${textClass} mb-3 flex items-center`,}
+                  , _react2.default.createElement(_lucidereact.Star, { className: "w-5 h-5 mr-2 text-amber-500"   ,} ), " Intenção do Dia"
+                )
+                , _react2.default.createElement('p', { className: `${textSecondary} leading-relaxed font-medium`, style: { fontFamily: 'Georgia, serif' },}, dia.intencao)
+              )
+
+              , _react2.default.createElement('section', { className: `${cardBg2} rounded-xl p-6 border`,}
+                , _react2.default.createElement('h3', { className: `font-semibold ${textClass} mb-3 flex items-center`,}
+                  , _react2.default.createElement(_lucidereact.BookOpen, { className: "w-5 h-5 mr-2 text-amber-500"   ,} ), " Reflexão"
+                )
+                , _react2.default.createElement('p', { className: `${textSecondary} leading-relaxed`, style: { fontFamily: 'Georgia, serif' },}, dia.reflexao)
+              )
+
+              , _react2.default.createElement('section', { className: `${cardBg} rounded-xl p-6 border`,}
+                , _react2.default.createElement('h3', { className: `font-semibold ${textClass} mb-4`, style: { fontFamily: 'Georgia, serif' },}, "Oração a Nossa Senhora Desatadora dos Nós"      )
+                , _react2.default.createElement('p', { className: `${textSecondary} leading-relaxed whitespace-pre-line`, style: { fontFamily: 'Georgia, serif' },}, oracaoFinal)
+              )
+
+              , _react2.default.createElement('section', { className: `${cardBg2} rounded-xl p-6 border`,}
+                , _react2.default.createElement('h3', { className: `font-semibold ${textClass} mb-3`,}, "Orações de Encerramento"  )
+                , _react2.default.createElement('p', { className: `${textSecondary} leading-relaxed whitespace-pre-line`, style: { fontFamily: 'Georgia, serif' },}, oracoesFechamento)
+              )
+
+              , _react2.default.createElement(PrayerTimer, null )
+
+              , _react2.default.createElement('div', { className: `${cardBg} rounded-xl p-6 border`,}
+                , _react2.default.createElement('h3', { className: `font-semibold ${textClass} mb-3 flex items-center`,}
+                  , _react2.default.createElement(_lucidereact.PenTool, { className: "w-5 h-5 mr-2 text-amber-500"   ,} ), " Meu Diário — Dia "     , dia.dia
+                )
+                , _react2.default.createElement('textarea', { value: diaryEntries[selectedDay] || '', onChange: (e) => setDiaryEntries(prev => ({ ...prev, [selectedDay]: e.target.value })), placeholder: "Escreva aqui suas reflexões, sentimentos e intenções de hoje..."        , className: `w-full p-4 rounded-lg border ${nightMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-amber-200 text-blue-900 placeholder-blue-300'} min-h-32 resize-y focus:outline-none focus:border-amber-400`, style: { fontSize: `${fontSize}px` },} )
+              )
+
+              , _react2.default.createElement('button', { onClick: () => toggleComplete(selectedDay), className: `w-full py-4 rounded-xl text-lg font-semibold transition-all flex items-center justify-center gap-2 ${completedDays[selectedDay] ? (nightMode ? 'bg-green-800 text-green-100' : 'bg-green-100 text-green-800 border-2 border-green-400') : 'bg-gradient-to-r from-amber-500 to-yellow-400 text-blue-900 hover:from-amber-600 hover:to-yellow-500'}`,}
+                , _react2.default.createElement(_lucidereact.Check, { className: "w-5 h-5" ,} )
+                , completedDays[selectedDay] ? '✓ Dia Concluído — Deus te abençoe!' : 'Marcar Dia como Concluído'
+              )
+            )
+
+            , _react2.default.createElement('div', { className: "flex justify-between mt-8 mb-8"   ,}
+              , selectedDay > 0 && (
+                _react2.default.createElement('button', { onClick: () => setSelectedDay(selectedDay - 1), className: `flex items-center px-5 py-3 rounded-xl transition-colors text-lg ${nightMode ? 'bg-gray-700 text-gray-200 hover:bg-gray-600' : 'bg-blue-100 text-blue-800 hover:bg-blue-200'}`,}
+                  , _react2.default.createElement(_lucidereact.ChevronLeft, { className: "w-5 h-5 mr-1"  ,} ), " Dia "  , selectedDay
+                )
+              )
+              , selectedDay < 8 && (
+                _react2.default.createElement('button', { onClick: () => setSelectedDay(selectedDay + 1), className: "flex items-center px-5 py-3 bg-gradient-to-r from-amber-500 to-yellow-400 text-blue-900 rounded-xl hover:from-amber-600 hover:to-yellow-500 transition-all text-lg ml-auto"             ,}, "Dia "
+                   , selectedDay + 2, " " , _react2.default.createElement(_lucidereact.ChevronRight, { className: "w-5 h-5 ml-1"  ,} )
+                )
+              )
+            )
+          )
+        )
+      )
+    );
+  }
+
+  // MAIN AREA
+  return (
+    _react2.default.createElement('div', { className: `min-h-screen ${bgClass} transition-colors duration-300`,}
+      /* Sidebar */
+      , _react2.default.createElement(_framermotion.AnimatePresence, null
+        , sidebarOpen && (
+          _react2.default.createElement(_react2.default.Fragment, null
+            , _react2.default.createElement(_framermotion.motion.div, { initial: { opacity: 0 }, animate: { opacity: 0.5 }, exit: { opacity: 0 }, className: "fixed inset-0 bg-black z-40"   , onClick: () => setSidebarOpen(false),} )
+            , _react2.default.createElement(_framermotion.motion.aside, { initial: { x: -300 }, animate: { x: 0 }, exit: { x: -300 }, transition: { type: 'tween' }, className: `fixed top-0 left-0 h-full w-72 ${nightMode ? 'bg-gray-800' : 'bg-blue-900'} z-50 p-6 shadow-2xl`,}
+              , _react2.default.createElement('div', { className: "flex justify-between items-center mb-8"   ,}
+                , _react2.default.createElement(NossaSenhoraSmall, { className: "w-12 h-12" ,} )
+                , _react2.default.createElement('button', { onClick: () => setSidebarOpen(false), className: "text-white",}, _react2.default.createElement(_lucidereact.X, { className: "w-6 h-6" ,}))
+              )
+              , _react2.default.createElement('nav', { className: "space-y-2",}
+                , [
+                  { id: 'novena', label: 'Minha Novena', icon: _lucidereact.Home },
+                  { id: 'guia', label: 'Guia de Oração', icon: _lucidereact.FileText },
+                  { id: 'diario', label: 'Meu Diário', icon: _lucidereact.PenTool },
+                  { id: 'sobre', label: 'Sobre a Devoção', icon: _lucidereact.Info },
+                  { id: 'faq', label: 'Perguntas Frequentes', icon: _lucidereact.HelpCircle },
+                ].map(item => (
+                  _react2.default.createElement('button', { key: item.id, onClick: () => { setCurrentTab(item.id); setSidebarOpen(false); }, className: `w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all ${currentTab === item.id ? 'bg-amber-500 text-blue-900 font-semibold' : 'text-white hover:bg-white hover:bg-opacity-10'}`,}
+                    , _react2.default.createElement(item.icon, { className: "w-5 h-5" ,} )
+                    , _react2.default.createElement('span', { className: "text-lg",}, item.label)
+                  )
+                ))
+              )
+              , _react2.default.createElement('div', { className: "absolute bottom-8 left-6 right-6 space-y-3"    ,}
+                , _react2.default.createElement('div', { className: "flex items-center justify-between"  ,}
+                  , _react2.default.createElement('span', { className: "text-blue-200 text-sm" ,}, "Modo Noturno" )
+                  , _react2.default.createElement('button', { onClick: () => setNightMode(!nightMode), className: `w-12 h-6 rounded-full flex items-center px-1 transition-colors ${nightMode ? 'bg-amber-500' : 'bg-gray-600'}`,}
+                    , _react2.default.createElement(_framermotion.motion.div, { animate: { x: nightMode ? 22 : 0 }, className: "w-5 h-5 bg-white rounded-full shadow"    ,} )
+                  )
+                )
+                , _react2.default.createElement('div', { className: "flex items-center justify-between"  ,}
+                  , _react2.default.createElement('span', { className: "text-blue-200 text-sm" ,}, "Fonte")
+                  , _react2.default.createElement('div', { className: "flex items-center gap-2"  ,}
+                    , _react2.default.createElement('button', { onClick: () => setFontSize(f => Math.max(14, f - 2)), className: "text-yellow-300 hover:text-yellow-200" ,}, _react2.default.createElement(_lucidereact.Minus, { className: "w-4 h-4" ,}))
+                    , _react2.default.createElement('span', { className: "text-white text-sm" ,}, fontSize)
+                    , _react2.default.createElement('button', { onClick: () => setFontSize(f => Math.min(24, f + 2)), className: "text-yellow-300 hover:text-yellow-200" ,}, _react2.default.createElement(_lucidereact.Plus, { className: "w-4 h-4" ,}))
+                  )
+                )
+                , _react2.default.createElement('button', { onClick: handleLogout, className: "w-full flex items-center gap-2 text-red-300 hover:text-red-200 pt-2"      ,}
+                  , _react2.default.createElement(_lucidereact.LogOut, { className: "w-4 h-4" ,}), " Sair"
+                )
+              )
+            )
+          )
+        )
+      )
+
+      /* Header */
+      , _react2.default.createElement('header', { className: `${nightMode ? 'bg-gray-800' : 'bg-blue-900'} text-white p-4 sticky top-0 z-30 shadow-lg`,}
+        , _react2.default.createElement('div', { className: "max-w-3xl mx-auto flex items-center justify-between"    ,}
+          , _react2.default.createElement('button', { onClick: () => setSidebarOpen(true), className: "text-yellow-300 hover:text-yellow-200" ,}
+            , _react2.default.createElement(_lucidereact.Menu, { className: "w-6 h-6" ,} )
+          )
+          , _react2.default.createElement('h1', { className: "text-lg font-light" , style: { fontFamily: 'Georgia, serif' },}, "9 Dias com "   , _react2.default.createElement('span', { className: "font-semibold text-yellow-300" ,}, "Nossa Senhora" ))
+          , _react2.default.createElement('button', { onClick: () => setNightMode(!nightMode), className: "text-yellow-300 hover:text-yellow-200" ,}
+            , nightMode ? _react2.default.createElement(_lucidereact.Sun, { className: "w-5 h-5" ,}) : _react2.default.createElement(_lucidereact.Moon, { className: "w-5 h-5" ,})
+          )
+        )
+      )
+
+      /* Progress Bar */
+      , _react2.default.createElement('div', { className: `${nightMode ? 'bg-gray-800' : 'bg-amber-50'} p-4 border-b ${nightMode ? 'border-gray-700' : 'border-amber-100'}`,}
+        , _react2.default.createElement('div', { className: "max-w-3xl mx-auto" ,}
+          , _react2.default.createElement('div', { className: "flex items-center justify-between mb-2"   ,}
+            , _react2.default.createElement('span', { className: `text-sm ${textSecondary}`,}, "Seu progresso" )
+            , _react2.default.createElement('span', { className: `text-sm font-semibold ${nightMode ? 'text-amber-400' : 'text-amber-700'}`,}, Object.keys(completedDays).length, "/9 dias" )
+          )
+          , _react2.default.createElement('div', { className: "flex gap-1" ,}
+            , Array.from({ length: 9 }).map((_, i) => (
+              _react2.default.createElement('div', { key: i, className: `flex-1 h-2 rounded-full transition-all duration-500 ${completedDays[i] ? (nightMode ? 'bg-amber-500' : 'bg-amber-500') : (nightMode ? 'bg-gray-700' : 'bg-amber-200')}`,} )
+            ))
+          )
+          , allCompleted && (
+            _react2.default.createElement(_framermotion.motion.button, { initial: { opacity: 0, y: -10 }, animate: { opacity: 1, y: 0 }, onClick: () => setShowCertificate(true), className: "mt-3 w-full py-2 bg-gradient-to-r from-amber-500 to-yellow-400 text-blue-900 rounded-lg font-semibold flex items-center justify-center gap-2 hover:from-amber-600 hover:to-yellow-500 transition-all"               ,}
+              , _react2.default.createElement(_lucidereact.Award, { className: "w-5 h-5" ,} ), " Ver meu Certificado de Conclusão"
+            )
+          )
+        )
+      )
+
+      /* Main Content */
+      , _react2.default.createElement('main', { className: "max-w-3xl mx-auto p-6"  , style: { fontSize: `${fontSize}px` },}
+        , _react2.default.createElement(_framermotion.AnimatePresence, { mode: "wait",}
+          , currentTab === 'novena' && (
+            _react2.default.createElement(_framermotion.motion.div, { key: "novena", initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 },}
+              , _react2.default.createElement('div', { className: "text-center mb-8" ,}
+                , _react2.default.createElement(NossaSenhoraIllustration, { className: "w-32 h-48 mx-auto mb-4 opacity-80"    ,} )
+                , _react2.default.createElement('h2', { className: `text-2xl font-semibold ${textClass}`, style: { fontFamily: 'Georgia, serif' },}, "Olá, " , userName)
+                , _react2.default.createElement('p', { className: `${textSecondary} mt-1`,}, "Que Nossa Senhora guie sua oração hoje."      )
+                , _react2.default.createElement(OrnamentalDivider, { dark: nightMode,} )
+              )
+
+              , _react2.default.createElement('div', { className: `${nightMode ? 'bg-amber-900 bg-opacity-20 border-amber-700' : 'bg-gradient-to-r from-amber-50 to-yellow-50 border-amber-200'} rounded-xl p-5 mb-8 border text-center`,}
+                , _react2.default.createElement('p', { className: `italic ${nightMode ? 'text-amber-200' : 'text-amber-800'}`, style: { fontFamily: 'Georgia, serif' },}
+                  , novenaData[Math.min(Object.keys(completedDays).length, 8)].fraseMotivacional
+                )
+              )
+
+              , _react2.default.createElement('h3', { className: `text-xl font-semibold ${textClass} mb-4`, style: { fontFamily: 'Georgia, serif' },}, "Escolha o Dia da Novena"    )
+              , _react2.default.createElement('div', { className: "grid grid-cols-3 gap-3 mb-8"   ,}
+                , novenaData.map((dia, index) => (
+                  _react2.default.createElement(_framermotion.motion.button, { key: index, whileHover: { scale: 1.03 }, whileTap: { scale: 0.97 }, onClick: () => setSelectedDay(index), className: `relative p-4 rounded-xl transition-all flex flex-col items-center border-2 ${completedDays[index] ? (nightMode ? 'bg-green-900 bg-opacity-30 border-green-600' : 'bg-green-50 border-green-400') : (nightMode ? 'bg-gray-800 border-gray-600 hover:border-amber-500' : 'bg-white border-amber-100 hover:border-amber-400 hover:shadow-md')}`,}
+                    , completedDays[index] && (
+                      _react2.default.createElement('div', { className: "absolute top-1 right-1"  ,}
+                        , _react2.default.createElement(_lucidereact.Check, { className: `w-4 h-4 ${nightMode ? 'text-green-400' : 'text-green-600'}`,} )
+                      )
+                    )
+                    , _react2.default.createElement('span', { className: `text-2xl font-bold ${textClass}`,}, dia.dia)
+                    , _react2.default.createElement('span', { className: `text-xs ${textSecondary} mt-1 text-center leading-tight`,}, dia.titulo.split(' ').slice(0, 3).join(' '))
+                  )
+                ))
+              )
+
+              , _react2.default.createElement('div', { className: `${cardBg2} rounded-xl p-6 border mb-6`,}
+                , _react2.default.createElement('h3', { className: `text-lg font-semibold ${textClass} mb-3 flex items-center`,}
+                  , _react2.default.createElement(_lucidereact.Clock, { className: "w-5 h-5 mr-2 text-amber-500"   ,} ), " Horário Recomendado"
+                )
+                , _react2.default.createElement('p', { className: `${textSecondary} leading-relaxed`,}, "Pela manhã: "  , _react2.default.createElement('strong', null, "6h às 9h"  ), " — ou à noite: "     , _react2.default.createElement('strong', null, "18h às 21h"  ))
+                , _react2.default.createElement('p', { className: `${textSecondary} leading-relaxed mt-2`,}, "Escolha um horário e mantenha-o todos os dias. A constância fortalece sua oração."            )
+              )
+            )
+          )
+
+          , currentTab === 'guia' && (
+            _react2.default.createElement(_framermotion.motion.div, { key: "guia", initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 },}
+              , _react2.default.createElement('div', { className: "text-center mb-8" ,}
+                , _react2.default.createElement('h2', { className: `text-2xl font-semibold ${textClass}`, style: { fontFamily: 'Georgia, serif' },}, "Guia Completo de Oração"   )
+                , _react2.default.createElement(OrnamentalDivider, { dark: nightMode,} )
+              )
+
+              , _react2.default.createElement(NossaSenhoraSmall, { className: "w-20 h-20 mx-auto mb-6 opacity-70"    ,} )
+
+              , _react2.default.createElement('div', { className: `${cardBg} rounded-xl p-6 border mb-6`,}
+                , _react2.default.createElement('h3', { className: `text-lg font-semibold ${textClass} mb-4`,}, "📅 Duração e Frequência"   )
+                , _react2.default.createElement('p', { className: `${textSecondary} leading-relaxed`,}, "A novena dura 9 dias consecutivos. Reze todos os dias, sem interrupção. Se precisar recomeçar, volte ao Dia 1 com fé renovada."                     )
+              )
+
+              , _react2.default.createElement('div', { className: `${cardBg2} rounded-xl p-6 border mb-6`,}
+                , _react2.default.createElement('h3', { className: `text-lg font-semibold ${textClass} mb-4`,}, "⏰ Melhor Horário"  )
+                , _react2.default.createElement('p', { className: `${textSecondary} leading-relaxed`,}, "Recomendamos rezar entre 6h e 9h da manhã (momento de oferta do dia) ou entre 18h e 21h (momento de recolhimento). O mais importante é manter o mesmo horário todos os dias — isso cria um hábito sagrado."                                     )
+              )
+
+              , _react2.default.createElement('div', { className: `${cardBg} rounded-xl p-6 border mb-6`,}
+                , _react2.default.createElement('h3', { className: `text-lg font-semibold ${textClass} mb-4`,}, "🕯️ Preparação do Ambiente"   )
+                , _react2.default.createElement('p', { className: `${textSecondary} leading-relaxed mb-2`,}, "Para criar um ambiente de oração, sugerimos:"      )
+                , _react2.default.createElement('p', { className: `${textSecondary} leading-relaxed`,}, "Escolha um local tranquilo da casa. Acenda uma vela branca ou amarela (símbolo de luz divina). Tenha uma imagem de Nossa Senhora próxima. Segure seu terço nas mãos. Silencie o celular e afaste distrações. Se possível, tenha um crucifixo visível."                                       )
+              )
+
+              , _react2.default.createElement('div', { className: `${cardBg2} rounded-xl p-6 border mb-6`,}
+                , _react2.default.createElement('h3', { className: `text-lg font-semibold ${textClass} mb-4`,}, "📖 Estrutura Diária"  )
+                , _react2.default.createElement('div', { className: `${textSecondary} leading-relaxed space-y-2`,}
+                  , _react2.default.createElement('p', null, _react2.default.createElement('strong', null, "1."), " Sinal da Cruz e Ato de Contrição (preparação do coração)"          )
+                  , _react2.default.createElement('p', null, _react2.default.createElement('strong', null, "2."), " Meditação do Dia (reflexão específica sobre o nó)"        )
+                  , _react2.default.createElement('p', null, _react2.default.createElement('strong', null, "3."), " Intenção do Dia (o que pedir neste dia)"        )
+                  , _react2.default.createElement('p', null, _react2.default.createElement('strong', null, "4."), " Reflexão Espiritual (aprofundamento)"   )
+                  , _react2.default.createElement('p', null, _react2.default.createElement('strong', null, "5."), " Oração a Nossa Senhora Desatadora dos Nós"       )
+                  , _react2.default.createElement('p', null, _react2.default.createElement('strong', null, "6."), " 3 Ave-Marias + 1 Pai Nosso + 1 Glória"         )
+                  , _react2.default.createElement('p', null, _react2.default.createElement('strong', null, "7."), " Meditação silenciosa (use o cronômetro)"     )
+                )
+              )
+
+              , _react2.default.createElement('div', { className: `${cardBg} rounded-xl p-6 border mb-6`,}
+                , _react2.default.createElement('h3', { className: `text-lg font-semibold ${textClass} mb-4`,}, "💡 Dicas Importantes"  )
+                , _react2.default.createElement('p', { className: `${textSecondary} leading-relaxed`,}, "Reze com calma, sem pressa — cada palavra importa. Se sentir emoção durante a oração, permita-se sentir — é o Espírito Santo agindo. Anote suas reflexões no Diário Espiritual após cada dia. Confie que Nossa Senhora ouve cada oração, mesmo as mais simples. Não se cobre perfeição — Deus acolhe seu coração sincero."                                                    )
+              )
+
+              , _react2.default.createElement(PrayerTimer, null )
+            )
+          )
+
+          , currentTab === 'diario' && (
+            _react2.default.createElement(_framermotion.motion.div, { key: "diario", initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 },}
+              , _react2.default.createElement('div', { className: "text-center mb-8" ,}
+                , _react2.default.createElement('h2', { className: `text-2xl font-semibold ${textClass}`, style: { fontFamily: 'Georgia, serif' },}, "Meu Diário Espiritual"  )
+                , _react2.default.createElement('p', { className: `${textSecondary} mt-2`,}, "Registre suas reflexões, sentimentos e graças recebidas."      )
+                , _react2.default.createElement(OrnamentalDivider, { dark: nightMode,} )
+              )
+
+              , _react2.default.createElement('div', { className: "space-y-4",}
+                , novenaData.map((dia, index) => (
+                  _react2.default.createElement('div', { key: index, className: `${cardBg} rounded-xl p-5 border`,}
+                    , _react2.default.createElement('div', { className: "flex items-center justify-between mb-3"   ,}
+                      , _react2.default.createElement('h4', { className: `font-semibold ${textClass}`,}, "Dia " , dia.dia, " — "  , dia.titulo)
+                      , completedDays[index] && _react2.default.createElement(_lucidereact.Check, { className: "w-5 h-5 text-green-500"  ,} )
+                    )
+                    , _react2.default.createElement('textarea', { value: diaryEntries[index] || '', onChange: (e) => setDiaryEntries(prev => ({ ...prev, [index]: e.target.value })), placeholder: "Escreva suas reflexões do dia..."    , className: `w-full p-3 rounded-lg border min-h-24 resize-y focus:outline-none focus:border-amber-400 ${nightMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-amber-200 text-blue-900 placeholder-blue-300'}`, style: { fontSize: `${fontSize}px` },} )
+                  )
+                ))
+              )
+            )
+          )
+
+          , currentTab === 'sobre' && (
+            _react2.default.createElement(_framermotion.motion.div, { key: "sobre", initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 },}
+              , _react2.default.createElement('div', { className: "text-center mb-8" ,}
+                , _react2.default.createElement('h2', { className: `text-2xl font-semibold ${textClass}`, style: { fontFamily: 'Georgia, serif' },}, "Sobre a Devoção"  )
+                , _react2.default.createElement(OrnamentalDivider, { dark: nightMode,} )
+              )
+
+              , _react2.default.createElement(NossaSenhoraIllustration, { className: "w-40 h-56 mx-auto mb-6 opacity-80"    ,} )
+
+              , _react2.default.createElement('div', { className: `${textSecondary} leading-relaxed space-y-6`, style: { fontFamily: 'Georgia, serif' },}
+                , _react2.default.createElement('div', { className: `${cardBg} rounded-xl p-6 border`,}
+                  , _react2.default.createElement('h3', { className: `text-lg font-semibold ${textClass} mb-3`,}, "A Origem" )
+                  , _react2.default.createElement('p', null, "A devoção a Nossa Senhora Desatadora dos Nós teve origem em uma pintura do artista Johann Georg Melchior Schmidtner, datada por volta de 1700. A obra está na igreja de St. Peter am Perlach, em Augsburg, na Alemanha."                                     )
+                  , _react2.default.createElement('p', { className: "mt-3",}, "A pintura retrata a Virgem Maria de pé sobre a lua crescente, cercada por anjos, com as mãos desatando os nós de uma longa fita branca — símbolo dos problemas humanos que ela desfaz com seu amor maternal."                                     )
+                )
+
+                , _react2.default.createElement('div', { className: `${cardBg2} rounded-xl p-6 border`,}
+                  , _react2.default.createElement('h3', { className: `text-lg font-semibold ${textClass} mb-3`,}, "A Inspiração Teológica"  )
+                  , _react2.default.createElement('p', null, "A devoção tem raízes em um texto de Santo Irineu de Lyon (século II), que escreveu: \"O nó da desobediência de Eva foi desatado pela obediência de Maria.\" Assim como Eva, ao desobedecer, criou um nó no destino da humanidade, Maria, ao dizer \"sim\" a Deus, começou a desatar todos os nós."                                                   )
+                )
+
+                , _react2.default.createElement('div', { className: `${cardBg} rounded-xl p-6 border`,}
+                  , _react2.default.createElement('h3', { className: `text-lg font-semibold ${textClass} mb-3`,}, "O Papa Francisco e a Devoção"     )
+                  , _react2.default.createElement('p', null, "Quando ainda era padre na Argentina, Jorge Mario Bergoglio (hoje Papa Francisco) conheceu a imagem durante estudos na Alemanha e ficou profundamente tocado. Ele trouxe a devoção para a América Latina, onde se espalhou rapidamente entre os fiéis."                                     )
+                  , _react2.default.createElement('p', { className: "mt-3",}, "Hoje, milhões de pessoas no mundo inteiro rezam a Nossa Senhora Desatadora dos Nós, confiando seus problemas, angústias e dificuldades às mãos da Virgem Maria."                        )
+                )
+
+                , _react2.default.createElement('div', { className: `${cardBg2} rounded-xl p-6 border`,}
+                  , _react2.default.createElement('h3', { className: `text-lg font-semibold ${textClass} mb-3`,}, "O Que São os \"Nós\"?"    )
+                  , _react2.default.createElement('p', null, "Os nós representam tudo aquilo que nos prende, sufoca e impede de viver em plenitude: medos, doenças, brigas familiares, vícios, problemas financeiros, mágoas, ansiedade, solidão, falta de fé... Cada nó é uma dificuldade que, com a intercessão de Maria, pode ser desatado pela graça de Deus."                                             )
+                )
+              )
+            )
+          )
+
+          , currentTab === 'faq' && (
+            _react2.default.createElement(_framermotion.motion.div, { key: "faq", initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 },}
+              , _react2.default.createElement('div', { className: "text-center mb-8" ,}
+                , _react2.default.createElement('h2', { className: `text-2xl font-semibold ${textClass}`, style: { fontFamily: 'Georgia, serif' },}, "Perguntas Frequentes" )
+                , _react2.default.createElement(OrnamentalDivider, { dark: nightMode,} )
+              )
+
+              , _react2.default.createElement('div', { className: "space-y-3",}
+                , faqData.map((faq, index) => (
+                  _react2.default.createElement('div', { key: index, className: `${cardBg} rounded-xl border overflow-hidden`,}
+                    , _react2.default.createElement('button', { onClick: () => setExpandedFaq(expandedFaq === index ? null : index), className: `w-full p-5 text-left flex items-center justify-between ${textClass}`,}
+                      , _react2.default.createElement('span', { className: "font-medium pr-4" ,}, faq.pergunta)
+                      , _react2.default.createElement(_lucidereact.ChevronRight, { className: `w-5 h-5 flex-shrink-0 transition-transform ${expandedFaq === index ? 'rotate-90' : ''}`,} )
+                    )
+                    , _react2.default.createElement(_framermotion.AnimatePresence, null
+                      , expandedFaq === index && (
+                        _react2.default.createElement(_framermotion.motion.div, { initial: { height: 0, opacity: 0 }, animate: { height: 'auto', opacity: 1 }, exit: { height: 0, opacity: 0 }, transition: { duration: 0.2 },}
+                          , _react2.default.createElement('p', { className: `px-5 pb-5 ${textSecondary} leading-relaxed`,}, faq.resposta)
+                        )
+                      )
+                    )
+                  )
+                ))
+              )
+            )
+          )
+        )
+      )
+
+      /* Bottom Navigation */
+      , _react2.default.createElement('div', { className: `fixed bottom-0 left-0 right-0 ${nightMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-amber-100'} border-t shadow-lg z-20`,}
+        , _react2.default.createElement('div', { className: "max-w-3xl mx-auto flex"  ,}
+          , [
+            { id: 'novena', label: 'Novena', icon: _lucidereact.Home },
+            { id: 'guia', label: 'Guia', icon: _lucidereact.FileText },
+            { id: 'diario', label: 'Diário', icon: _lucidereact.PenTool },
+            { id: 'sobre', label: 'Sobre', icon: _lucidereact.Info },
+            { id: 'faq', label: 'FAQ', icon: _lucidereact.HelpCircle },
+          ].map(item => (
+            _react2.default.createElement('button', { key: item.id, onClick: () => setCurrentTab(item.id), className: `flex-1 py-3 flex flex-col items-center gap-1 transition-colors ${currentTab === item.id ? (nightMode ? 'text-amber-400' : 'text-amber-600') : (nightMode ? 'text-gray-400' : 'text-blue-300')}`,}
+              , _react2.default.createElement(item.icon, { className: "w-5 h-5" ,} )
+              , _react2.default.createElement('span', { className: "text-xs",}, item.label)
+            )
+          ))
+        )
+      )
+
+      , _react2.default.createElement('div', { className: "h-20",})
+    )
+  );
+} exports.default = App;
+</script></head>
+  <body>
+  
+
+<div id="preview-app"></div></body></html>
